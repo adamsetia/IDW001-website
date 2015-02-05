@@ -1,7 +1,7 @@
-@import 'css/MyFontsWebfontsKit.css';
-@import 'css/font-awesome.min.css';
-@import 'css/hover-min.css';
-@import 'css/owl.carousel.css';
+@import 'MyFontsWebfontsKit.css';
+@import 'font-awesome.min.css';
+@import 'hover-min.css';
+@import 'owl.carousel.css';
 /* webfotnts */
 /*! normalize.css v1.1.2 | MIT License | git.io/normalize */
 /* ==========================================================================
@@ -612,12 +612,6 @@ textarea {
   }
 }
 /*site colors*/
-/*
-font-family:'Proxima N W01 Bold';
-font-family:'Proxima N W01 Smbd';
-font-family:'Proxima N W01 Light';
-font-family:'Proxima Nova W08 Reg';
-*/
 /* global */
 * {
   padding: 0;
@@ -633,13 +627,12 @@ html {
 }
 body {
   /* set default fonts */
-  font-size: 14px;
+  font-size: 18px;
   letter-spacing: 0.05em;
-  color: #6c6a6a;
-  line-height: 1.667em;
-  font-family: "open-sans";
-  font-weight: 300;
-  font-style: normal;
+  color: #939598;
+  line-height: 1.333em;
+  font-family: 'AvenirNextLTPro-Medium';
+  font-weight: normal;
   background-color: #fff;
 }
 h1,
@@ -709,24 +702,24 @@ a {
   transition: all 0.2s ease-out 0s;
 }
 a:link {
-  color: #4e4d4d;
+  color: #414046;
   text-decoration: underline;
   font-size: inherit;
 }
 a:visited {
-  color: #4e4d4d;
+  color: #414046;
   text-decoration: underline;
 }
 a:hover {
-  color: #9b9999;
+  color: #8c8b94;
   text-decoration: underline;
 }
 a:active {
-  color: #4e4d4d;
+  color: #414046;
   text-decoration: underline;
 }
 a.active {
-  color: #9b9999;
+  color: #8c8b94;
   text-decoration: underline;
   cursor: default;
 }
@@ -835,6 +828,7 @@ h6,
 .h4,
 .h5,
 .h6 {
+  font-family: 'AvenirNextLTPro-Bold';
   font-weight: normal;
 }
 h4:first-child,
@@ -881,6 +875,22 @@ h4:first-child,
 .top-pad-mid {
   padding-top: 30px;
 }
+.div-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  width: 100%;
+  height: 100%;
+  -webkit-opacity: 0.86;
+  -moz-opacity: 0.86;
+  filter: alpha(opacity=86);
+  opacity: 0.86;
+}
+.div-bg.black {
+  background-color: #000000;
+}
 .seperator {
   padding-bottom: 60px;
 }
@@ -903,7 +913,7 @@ h4:first-child,
 .disabled,
 * > .disabled,
 *.disabled {
-  color: #ebeaea;
+  color: #808080;
 }
 .element-invisible {
   display: none;
@@ -971,6 +981,137 @@ h4:first-child,
 }
 /* side bar */
 /*top page*/
+header {
+  height: 98px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+header .holder {
+  position: relative;
+}
+header .logo {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  right: auto;
+  bottom: auto;
+  padding-left: 34px;
+}
+header .main-nav {
+  position: absolute;
+  left: auto;
+  top: 42px;
+  right: 0;
+  bottom: auto;
+  padding-right: 34px;
+  text-transform: uppercase;
+  font-family: 'AvenirNextLTPro-Bold';
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 1.176em;
+}
+header .main-nav ul,
+header .main-nav ol {
+  padding: 0;
+}
+header .main-nav ul li,
+header .main-nav ol li {
+  padding-left: 0;
+  background: none;
+}
+header .main-nav a {
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -ms-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+}
+header .main-nav a:link {
+  color: #3b3b3b;
+  text-decoration: none;
+  font-size: inherit;
+}
+header .main-nav a:visited {
+  color: #3b3b3b;
+  text-decoration: none;
+}
+header .main-nav a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+header .main-nav a:active {
+  color: #3b3b3b;
+  text-decoration: none;
+}
+header .main-nav a.active {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: default;
+}
+header .main-nav a.no-deco {
+  text-decoration: none;
+}
+header .main-nav ul li {
+  float: left;
+  position: relative;
+  padding-left: 42px;
+}
+header .main-nav ul li:before {
+  content: "";
+  padding: 0;
+  position: relative;
+}
+header .main-nav ul li:first-child {
+  padding-left: 0;
+}
+header .main-nav ul li ul {
+  font-size: 13px;
+  left: -60px;
+  line-height: 1.154em;
+  position: absolute;
+  top: 30px;
+  width: 400px;
+}
+header .main-nav ul li ul li {
+  padding-left: 24px;
+}
+.front header .main-nav a {
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -ms-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+}
+.front header .main-nav a:link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: inherit;
+}
+.front header .main-nav a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+.front header .main-nav a:hover {
+  color: #00db6e;
+  text-decoration: none;
+}
+.front header .main-nav a:active {
+  color: #ffffff;
+  text-decoration: none;
+}
+.front header .main-nav a.active {
+  color: #00db6e;
+  text-decoration: none;
+  cursor: default;
+}
+.front header .main-nav a.no-deco {
+  text-decoration: none;
+}
+.page-about header .main-nav {
+  top: 30px;
+}
 /*footer*/
 /* layout start */
 /*sections*/

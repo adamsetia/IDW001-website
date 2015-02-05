@@ -147,6 +147,7 @@ textarea, input { outline: none; }
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { 
 	font-weight: normal;
+	.avenirBold();
 }
 h1, .h1 {
 	
@@ -188,6 +189,7 @@ ul {
 .top-pad-sml {
 	padding-top: 15px;
 }
+
 .top-pad-mid {
 	padding-top: 30px;
 }
@@ -196,6 +198,15 @@ ul {
 .main-line {
 }
 .sub-title {
+}
+.div-bg {
+	.positions(absolute);
+	width: 100%;
+	height: 100%;
+	.setOpacity(0.86);
+	&.black {
+		background-color: @color-black;	
+	}
 }
 .seperator {
 	padding-bottom: 60px;	

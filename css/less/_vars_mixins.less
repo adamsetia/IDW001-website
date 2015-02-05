@@ -1,75 +1,36 @@
 @breakpoint1 : 768px;
 @breakpoint2 : 1024px;
 @breakpoint3 : 1200px;
-@font-size : 14px;
-@line-height : 1.667em;
-@color-option : #4e4d4d;
-@color: #6c6a6a;
+@font-size : 18px;
+@line-height : 1.333em;
+
 @color-black: #000;
 @color-white: #fff;
+@color-option : #414046;
+@color: @color-black;
 @color-white-hvr : darken(@color-white, 20%);
 @hover-color : lighten(@color-option, 30%);
 @color-bar-grey: #919090;
 /*site colors*/
-@col-purple: #c04192;
-@col-purple-hvr: darken(@col-purple, 10%);
-@col-pink: #ff7285;
-@col-pink-hvr: darken(@col-pink, 10%);
-@col-yellow: #f9c533;
-@col-yellow-hvr: darken(@col-yellow, 10%);
-@col-green: #b6dba5;
-@col-green-hvr: darken(@col-green, 10%);
-@col-blue: #9ecddd;
-@col-blue-hvr: darken(@col-blue, 10%);
-@col-beige: #e1d1ad;
-@col-beige-hvr: darken(@col-beige, 10%);
-@col-orange: #fe6a42;
-@col-orange-hvr: darken(@col-orange, 10%);
+@col-ltgrey: #d9d9d9;
+@col-black50: #939598;
+@col-grn: #00db6e;
+@nav-grey: lighten(@color-black, 23%);
 
-/*
-font-family:'Proxima N W01 Bold';
-font-family:'Proxima N W01 Smbd';
-font-family:'Proxima N W01 Light';
-font-family:'Proxima Nova W08 Reg';
-*/
-.proximaMaster(@weight:400) {
-	font-family: "proxima-nova";
-	font-weight: @weight;
-	font-style: normal;
+.avenirBold() {
+	font-family: 'AvenirNextLTPro-Bold';
+	font-weight: normal;	
 }
-.proximaBold() {
-	.proximaMaster(700);
-}
-.proximaLight() {
-	.proximaMaster(300);
-}
-.proximaReg() {
-	.proximaMaster();
-}
-.proximaSemiBold() {
-	.proximaMaster(600);
-}
-.proximaCondSemiBold() {
-	font-family: "proxima-nova-condensed";
-	font-weight: 600;
-	font-style: normal;
-}
-.openSansReg() {
-	font-family: "open-sans";
-	font-weight: 400;
-	font-style: normal;
-}
-.openSansLight() {
-	font-family: "open-sans";
-	font-weight: 300;
-	font-style: normal;
+.avenirMed() {
+	font-family: 'AvenirNextLTPro-Medium';
+	font-weight: normal;	
 }
 .baseFontSet() {
 	font-size: @font-size;
 	letter-spacing: 0.05em;
-	color: @color;
+	color: @col-black50;
 	line-height: @line-height;
-	.openSansLight();
+	.avenirMed();
 }
 .inheritWH(@w:inherit, @h:inherit) {
 	width: @w;

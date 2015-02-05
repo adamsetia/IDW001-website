@@ -1,4 +1,65 @@
 /*top page*/
+header {
+	height: 98px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	.holder {
+		position: relative;
+	}
+	.logo {
+		.positions(absolute, 0, 30px);	
+		padding-left: 34px;
+	}
+	.main-nav {
+		.positions(absolute, auto, 42px, 0);	
+		padding-right: 34px;
+		.listUnstyled();
+		text-transform: uppercase;
+		.avenirBold();
+		font-size: 17px;
+		line-height: 1.176em;
+		.linkSet(@nav-grey, @color-white, inherit, none, none);
+		ul {
+			li {
+				.li-plain();
+				float: left;
+				position: relative;
+				padding-left: 42px;
+				&:first-child {
+					padding-left: 0;	
+				}
+				ul {
+					font-size: 13px;
+					left: -60px;
+					line-height: 1.154em;
+					position: absolute;
+					top: 30px;
+					width: 400px;
+					
+					li {
+						padding-left: 24px;	
+					}
+				}
+			}
+		}
+	}
+}
+.front {
+	header {
+		.main-nav {
+			.linkSet(@color-white, @col-grn, inherit, none, none);
+		}
+	}
+}
+.page-about {
+	header {
+		.main-nav {
+			top: 30px;	
+		}
+	}
+}
 
 .setTopPage(@w) when (@w = @breakpoint1) {
 	

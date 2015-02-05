@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="css/main.css">
 <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
-<body class="front">
+<body class="page-about">
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -23,21 +23,27 @@
     	<div class="div-bg black"></div>
         <!-- div-bg -->
     	<div class="holder">
-            <div class="logo">
-                <a href="#"><img src="img/logo-wht.svg" alt="Idea Works"></a>
-            </div>
-            <!-- logo -->
-            <nav class="main-nav">
-                <button class="btn-menu mobile show"><span class="fa fa-bars"></span></button>
-                <ul>
-                    <li><a href="#">Work</a></li>
-                    <li><a href="#">About</a>
-                    </li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-            <!-- main-nav -->
-            </div>
+        <div class="logo">
+        	<a href="#"><img src="img/logo-grn.svg" alt="Idea Works"></a>
+        </div>
+        <!-- logo -->
+        <nav class="main-nav">
+        	<button class="btn-menu mobile show"><span class="fa fa-bars"></span></button>
+            <ul>
+            	<li><a href="#">Work</a></li>
+                <li><a class="active" href="#">About</a>
+                	<ul>
+                    	<li><a href="#">Us</a></li>
+                        <li><a href="#">The Pillars</a></li>
+                        <li><a href="#">People</a></li>
+                        <li><a href="#">Clients</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- main-nav -->
+        </div>
         <!-- holder -->
     </header>
 </div>
@@ -46,6 +52,7 @@
 <script src="js/greensock/TweenLite.min.js"></script>
 <script src="js/greensock/easing/EasePack.min.js"></script>
 <script src="js/greensock/plugins/CSSPlugin.min.js"></script>
+<script src="js/vendor/svg-injector.min.js"></script>
 <script src="js/plugins.js"></script> 
 <script src="js/main.js"></script> 
 </body>
