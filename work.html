@@ -25,7 +25,7 @@
         <!-- div-bg -->
     	<div class="holder">
             <div class="logo">
-                <a href="#"><img src="img/logo-wht.svg" alt="Idea Works"></a>
+                <a href="index.html"><img src="img/logo-wht.svg" alt="Idea Works"></a>
             </div>
             <!-- logo -->
             <nav class="main-nav">
@@ -41,7 +41,7 @@
                 <div class="nav-items">
                 	<div class="site-links">
                         <ul>
-                            <li><a href="work.html">Work</a></li>
+                            <li><a class="active" href="work.html">Work</a></li>
                             <li><a href="about.html">About</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
@@ -60,22 +60,119 @@
             </div>
         <!-- holder -->
     </header>
-    <section class="work-tiles top-space">
+    <div class="work-filter top-space">
+    	<div class="container">
+        	<button class="mobile show"><span>Filter</span></button>
+            <div class="holder">
+            	<a class="filter-reset active" data-filter-value="" href="#filter-reset" rel="nofollow">All</a>
+                <a data-filter-value=".client" href="#filter-client" rel="nofollow">Client</a>
+                <a data-filter-value=".channel" href="#filter-channel" rel="nofollow">Channel</a>
+                <a data-filter-value=".category" href="#filter-category" rel="nofollow">Category</a>
+            </div>
+        </div>
+    </div>
+    <!-- work-filter -->
+    <section class="work-tiles">
     	<div class="iso-wrap">
             <div class="grid-sizer"></div>
-            <div class="item w2 col-blu">1</div>
-            <div class="item col-ylw">2</div>
-            <div class="item col-grn">3</div>
-            <div class="item col-red">4</div>
-            <div class="item w2 col-blu">5</div>
-            <div class="item col-grn">6</div>
-            <div class="item w2 col-red">7</div>
-            <div class="item col-ylw">8</div>
-            <div class="item col-blu">9</div>
-            <div class="item w2 col-grn">10</div>
-            <div class="item col-red">11</div>
-            <div class="item col-ylw">12</div>
-            <div class="item col-blu">13</div>
+            <div class="item w2 client">
+            	<div class="content">
+                	<img src="img/work-1.jpg">
+                    <a href="#"><span>View project</span></a>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="item">
+            	<div class="content channel category">
+                	<img src="img/work-4.jpg">
+                    <a href="#"><span>View project</span></a>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="item category">
+            	<div class="content">
+                	<img src="img/work-6.jpg">
+                    <a href="#"><span>View project</span></a>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="item cleint channel">
+            	<div class="content">
+                	<img src="img/work-7.jpg">
+                    <a href="#"><span>View project</span></a>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="item w2 client category">
+            	<div class="content">
+                	<img src="img/work-2.jpg">
+                    <a href="#"><span>View project</span></a>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="item category">
+            	<div class="content">
+                	<img src="img/work-5.jpg">
+                    <a href="#"><span>View project</span></a>
+                </div>
+            </div>
+            <!-- item --> 
+            <div class="item w2 channel">
+            	<div class="content">
+                	<img src="img/work-3.jpg">
+                    <a href="#"><span>View project</span></a>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="item channel category">
+            	<div class="content">
+                	<img src="img/work-7.jpg">
+                    <a href="#"><span>View project</span></a>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="item">
+            	<div class="content client">
+                	<img src="img/work-6.jpg">
+                    <a href="#"><span>View project</span></a>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="item w2 client">
+            	<div class="content">
+                	<img src="img/work-1.jpg">
+                    <a href="#"><span>View project</span></a>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="item channel">
+            	<div class="content">
+                	<img src="img/work-4.jpg">
+                    <a href="#"><span>View project</span></a>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="item category">
+            	<div class="content">
+                	<img src="img/work-5.jpg">
+                    <a href="#"><span>View project</span></a>
+                </div>
+            </div>
+            <!-- item --> 
+            <div class="item w2 client category">
+            	<div class="content">
+                	<img src="img/work-3.jpg">
+                    <a href="#"><span>View project</span></a>
+                </div>
+            </div>
+            <!-- item -->
+            <div class="item w2 channel category">
+            	<div class="content">
+                	<img src="img/work-2.jpg">
+                    <a href="#"><span>View project</span></a>
+                </div>
+            </div>
+            <!-- item -->
         </div>
         <!-- iso-wrap -->
     </section>

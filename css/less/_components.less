@@ -60,9 +60,70 @@
 		}
 	}
 }
+/* isotope filter */
+.work-filter {
+	overflow: hidden;
+	height: 40px;
+	.transitions(height);
+	button {
+		.transitions(opacity);
+		display: block;
+		width: 100%;
+		height: 14px;
+		margin: 0 auto;
+		border: none;
+		background: url(images/arrw-down-sml.png) no-repeat center center;
+		background-image: url(images/arrw-down-sml.svg), none;
+		padding: 20px 0;
+		span {
+			display: none;	
+		}
+		&:hover {
+			.setOpacity();	
+		}
+	}
+	background-color: @color-option;
+	.avenirBold();
+	font-size: 17px;
+	line-height: 1.176em;
+	text-align: center;
+	
+	.box-sizing();
+	
+	.linkSet(@filt-grey, @filt-grey, inherit, none, none);
+	.holder {
+		padding: 15px 0;	
+	}
+	a {
+		display: block;
+		outline: none;
+		padding-bottom: 10px;
+		&:active, &.active {
+			color: @col-grn;	
+		}
+	}
+	&.show {
+		height: auto;	
+		button {
+			background: url(images/arrw-up-sml.png) no-repeat center center;
+			background-image: url(images/arrw-up-sml.svg), none;
+		}
+	}
+}
 
 .setComponents(@w) when (@w = @breakpoint1) {
-	
+	.work-filter {
+		height: 74px !important;;
+		padding: 27px 0;
+		.holder {
+			padding: 0;	
+		}
+		a {
+			.inline-block();
+			padding: 0;
+			margin: 0 20px;
+		}
+	}
 }	
 .setComponents(@w) when (@w = @breakpoint2) {
 	
