@@ -14,7 +14,7 @@ html {
 body {
 	/* set default fonts */
 	.baseFontSet();
-	background-color: #fff;
+	background-color: #000;
 }
 h1, h2, h3, h4, h5, h6, p, menu, ol, ul {
 	margin: 0;
@@ -103,13 +103,15 @@ button {
 textarea, input { outline: none; }
 .loader {
 	position: absolute;
-	top: 20px;
-	right: 20px;
-	z-index: 800;
-	/*background: url(images/loader.png) no-repeat left top;*/
-	width: 20px;
-	height: 20px;
+	top: 50%;
+	left: 50%;
+	z-index: 999;
+	background: url(images/loader.gif) no-repeat left top;
+	width: 50px;
+	height: 53px;
 	display: block;
+	margin-left: -25px;
+	margin-top: -26px;
 }
 .fine-print {
 	font-size: 9px;
@@ -182,9 +184,6 @@ ul {
 			color: @color-white;
 		}
 	}
-}
-.top-space {
-	padding-top: 122px !important;
 }
 .top-pad-sml {
 	padding-top: 15px;
@@ -278,14 +277,10 @@ ul {
 		}
 	}
 	
-	.stickySet(264px);
+	
 }	
 .setGlobal(@w) when (@w = @breakpoint2) {
 	br {
 		display: inline;	
-	}
-	.stickySet(294px);
-	body {
-		font-size: 17px;	
 	}
 }	

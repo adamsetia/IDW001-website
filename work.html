@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="css/main.css">
 <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
-<body class="front">
+<body>
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -30,7 +30,7 @@
             <!-- logo -->
             <nav class="main-nav">
                 <ul>
-                    <li><a href="work.html">Work</a></li>
+                    <li><a class="active" href="work.html">Work</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -60,40 +60,51 @@
             </div>
         <!-- holder -->
     </header>
-    <div class="home-banners">
-    	<div class="container">
-        	<div class="grid_full">
-            	<div class="table-display">
-            		<div class="table-cell">
-                    	<div class="item active"><h1 class="title"><a href="#">WiFi Cricket Cam</a></h1></div>
-                        <div class="item"><h1 class="title"><a href="#">Move S/S 14</a></h1></div>
-                        <div class="item"><h1 class="title"><a href="#">Dick Smith</a></h1></div>
-                    </div>
-                </div>
-            </div>
-            <!-- grid_full -->
+    <section class="work-tiles top-space">
+    	<div class="iso-wrap">
+            <div class="grid-sizer"></div>
+            <div class="item w2 col-blu">1</div>
+            <div class="item col-ylw">2</div>
+            <div class="item col-grn">3</div>
+            <div class="item col-red">4</div>
+            <div class="item w2 col-blu">5</div>
+            <div class="item col-grn">6</div>
+            <div class="item w2 col-red">7</div>
+            <div class="item col-ylw">8</div>
+            <div class="item col-blu">9</div>
+            <div class="item w2 col-grn">10</div>
+            <div class="item col-red">11</div>
+            <div class="item col-ylw">12</div>
+            <div class="item col-blu">13</div>
         </div>
-        <!-- container-->
-        <nav class="bg-nav">
-        	<div class="prev"></div>
-            <div class="next"></div>
-            <div class="pagination"></div>
-        </nav>
-    </div>
-    <!-- home-banners -->
+        <!-- iso-wrap -->
+    </section>
+    <!-- work-tiles -->
+    <footer>
+    	<div class="cr-txt">
+        	Ideaworks 2015
+        </div>
+        <!-- cr-txt -->
+        <div class="scl-links">
+        	<ul>
+            	<li><a href="#" target="_blank"><img src="img/icon-mail.svg" alt="Mail"></a></li>
+                <li><a href="#" target="_blank"><img src="img/icon-vimeo.svg" alt="Vimeo"></a></li>
+                <li><a href="#" target="_blank"><img src="img/icon-linkedin.svg" alt="LinkedIn"></a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- footer -->
 </div>
 <!-- wrapper -->
-<script>
-	var bgImgs = ["img/home-1.jpg", "img/home-2.jpg", "img/home-3.jpg"];
-</script>
 <script src="js/vendor/jquery-1.11.1.min.js"></script>
 <script src="js/greensock/TweenLite.min.js"></script>
 <script src="js/greensock/easing/EasePack.min.js"></script>
 <script src="js/greensock/plugins/CSSPlugin.min.js"></script>
 <script src="js/vendor/jquery.imgpreload.min.js"></script>
-<script src="js/vendor/jquery-bgstretcher-3.3.0.min.js"></script>
+<script src="js/vendor/isotope.pkgd.min.js"></script>
+<script src="js/vendor/jquery.inview.min.js"></script>
 <script src="js/plugins.js"></script> 
 <script src="js/main.js"></script>
-<script src="js/home.js"></script> 
+<script src="js/work.js"></script> 
 </body>
 </html>

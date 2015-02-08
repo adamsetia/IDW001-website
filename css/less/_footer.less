@@ -1,6 +1,46 @@
 /*footer*/
 
+footer {
+	position: relative;
+    width: 100%;
+	background-color: @color-option;
+	color: @foot-grey;
+	font-size: 14px;
+	line-height: 1.214em;
+	height: 60px;
+	.cr-txt {
+		.positions(absolute, 0, 24px);	
+		padding-left: 15px;
+	}
+	.scl-links {
+		.positions(absolute, auto, 15px, 0);
+		padding-right: 15px;
+		ul {
+			li {
+				float: left;
+				position: relative;
+				padding-left: 10px;
+				&:first-child {
+					padding-left: 0;	
+				}
+			}
+		}
+	}
+}
+.stickySet(60px);
 .setFooter(@w) when (@w = @breakpoint1) {
+	.stickySet(80px);
+	footer {
+		height: 80px;
+		.cr-txt {
+			padding-left: 34px;
+			top: 34px;
+		}
+		.scl-links {
+			padding-right: 34px;
+			top: 25px;
+		}
+	}
 }
 .setFooter(@w) when (@w = @breakpoint2) {
 }

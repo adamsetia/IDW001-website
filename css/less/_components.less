@@ -1,6 +1,65 @@
 /* components */
+.bgstretcher {
+	background: black;
+	overflow: hidden;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	img {
+		max-width: none;
+	}
+}
+.bgstretcher-area {
+ 	text-align: left;
+}
+.bgstretcher,
+.bgstretcher ul,
+.bgstretcher li {
+	left: 0;
+	top: 0;
+}
+.bgstretcher ul,
+.bgstretcher li {
+ 	position: absolute;
+}
+.bgstretcher ul,
+.bgstretcher li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+/*  Compatibility with old browsers  */
+.bgstretcher {
+ 	_position: absolute;
+}
+.bgs-description-pane {
+	display: block;
+	background: rgba(0, 0, 0, 0.7);
+	position: relative;
+	z-index: 10000;
+	padding: 15px;
+	color: #ffffff;
+	font-size: 14px;
+}
 
-
+/* navigations */
+.scl-links {
+	.listUnstyled();
+	a {
+		&:link {
+			.setOpacity(1);	
+		}
+		&:hover {
+			.setOpacity();	
+		}
+	}
+	
+	ul {
+		li {
+			.li-plain();
+		}
+	}
+}
 
 .setComponents(@w) when (@w = @breakpoint1) {
 	

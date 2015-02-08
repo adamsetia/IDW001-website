@@ -1,0 +1,124 @@
+/* home start */
+@header-height: 98px;
+.home-banners {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: #000;
+	.title {
+		color: @color-white;
+		font-size: 50px;
+		line-height: 1.200em;
+		padding: 0;
+		text-shadow: -3px 4px 1px rgba(0, 0, 0, 0.14);	
+		.linkSet(@color-white, @color-white-hvr, inherit, none, none);
+	}
+	> div {
+		visibility: hidden;	
+	}
+	.bgstretcher-area, .bgstretcher-page {
+		width: 100%;
+		height: 100%;	
+	}
+	.container, .container > div {
+		height: 100%;	
+	}
+	.table-display {
+		width: 100%;
+		height: 100%;
+		text-align: center;	
+	}
+	.table-cell {
+		.box-sizing();
+		padding-top: @header-height;	
+	}
+	.item {
+		position: absolute;
+		visibility: hidden;
+		&:first-child {
+			position: relative;
+			visibility: visible;	
+		}
+	}
+	
+	.bg-nav {
+		.prev, .next {
+			position: absolute;
+			top: 50%;
+			margin-top: ((@header-height/2)-35);
+			width: 41px;
+			height: 69px;
+			background-size: contain;
+			cursor: pointer;
+			.transitions(opacity);
+			.setOpacity(0.2);
+			display: none;
+			&:hover {
+				.setOpacity(1);
+			}
+		}
+		.prev {
+			left: 15px;
+			background: url(images/arrw-prev.png) no-repeat top left;
+			background-image: url(images/arrw-prev.svg), none;
+		}
+		.next {
+			right: 15px;
+			background: url(images/arrw-next.png) no-repeat top left;
+			background-image: url(images/arrw-next.svg), none;
+		}
+		.listUnstyled();
+		ul {
+			position: absolute;
+			width: 100%;
+			text-align: center;
+			bottom: 0;
+			left: 0;
+			line-height: 1;
+			padding-bottom: 30px;
+			li {
+				padding: 0;
+				display: block;
+				width: 15px;
+				height: 15px;
+				background: @color-white;
+				margin: 0 8px;
+				.inline-block();
+				.li-plain();
+				.setOpacity(0.2);
+				.boxCornerAll(10px);
+				a {
+					.setOpacity(0);
+					padding: 0;
+					display: block;
+					width: 15px;
+					height: 15px;
+				}
+				&:hover, &.showPage {
+					.setOpacity(1);
+				}
+			}
+		}
+	}
+}
+.setHome(@w) when (@w = @breakpoint1) {
+	.home-banners {
+		.title {
+			.box-sizing();
+			font-size: 80px;
+			padding: 0 40px;
+		}
+		.bg-nav {
+			.prev, .next {
+				display: block;
+			}
+		}
+	}
+}	
+.setHome(@w) when (@w = @breakpoint2) {
+	.home-banners {
+		.title {
+			font-size: 100px;
+		}
+	}
+}	
