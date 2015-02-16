@@ -1,6 +1,61 @@
 /* layout start */
+.h100 {
+	height: 100%;	
+}
+.h50 {
+	height: 50%;	
+}
+.h60 {
+	height: 60%;	
+}
+.h80 {
+	height: 80%;	
+}
+.minH50 {
+	min-height: 50%;	
+}
+section {
+	position: relative;
+	&.content {
+		padding: 45px 0 30px;
+		background-color: @bg-owhite;	
+		position: relative;
+		.btm-flush {
+			margin-bottom: -30px;
+		}
+	}
+}
+.skrl-block {
+	width: 100%;
+	overflow: hidden;
+	.bg {
+		width: 100%;
+		height: 100%;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		.box-sizing();
+		&.top-center {
+			background-position: center top;
+		}
+		&.bottom-center {
+			background-position: center bottom;
+		}
+		&.center-center {
+			background-position: center center;
+		}
+	}
+}
 .setLayout(@w) when (@w = @breakpoint1) {
+	section {
+		.cont-gap {
+			margin-top: 40px;	
+		}
+	}
 }	
 .setLayout(@w) when (@w = @breakpoint2) {
-	
+	section {
+		.cont-gap {
+			margin-top: 80px;	
+		}
+	}
 }	

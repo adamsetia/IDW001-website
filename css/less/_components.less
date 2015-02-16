@@ -45,20 +45,73 @@
 /* navigations */
 .scl-links {
 	.listUnstyled();
+	ul {
+		li {
+			.li-plain();
+			span {
+				display: none;	
+			}
+		}
+	}
 	a {
+		display: block;
+		width: 32px;
+		height: 31px;
+		background-position: left top;
+		background-size: contain;
+		background-repeat: no-repeat;
 		&:link {
 			.setOpacity(1);	
 		}
 		&:hover {
 			.setOpacity();	
 		}
-	}
-	
-	ul {
-		li {
-			.li-plain();
+		
+		&.scl-mail {
+			background: url(images/icon-mail.png) no-repeat top left;
+			background-image: url(images/icon-mail.svg), none;
+		}
+		&.scl-linkedin {
+			background: url(images/icon-linkedin.png) no-repeat top left;
+			background-image: url(images/icon-linkedin.svg), none;
+		}
+		&.scl-vimeo {
+			background: url(images/icon-vimeo.png) no-repeat top left;
+			background-image: url(images/icon-vimeo.svg), none;
+		}
+		&.scl-facebook {
+			background: url(images/icon-facebook.png) no-repeat top left;
+			background-image: url(images/icon-facebook.svg), none;
+		}
+		&.scl-linkedin2 {
+			background: url(images/icon-linkedin2.png) no-repeat top left;
+			background-image: url(images/icon-linkedin2.svg), none;
+		}
+		&.scl-twitter {
+			background: url(images/icon-twitter.png) no-repeat top left;
+			background-image: url(images/icon-twitter.svg), none;
+		}
+		&.scl-award {
+			width: 17px;
+			height: 35px;
+			background: url(images/ribbon.png) no-repeat top left;
+			background-image: url(images/ribbon.svg), none;
 		}
 	}
+	&.t2 {
+		a {
+			margin-top: 8px;
+			width: 27px;
+			height: 27px;
+		}
+		ul {
+			li {
+				padding: 0 4px 10px !important;
+			}
+		}
+	}
+	
+	
 }
 /* isotope filter */
 .work-filter {
@@ -103,7 +156,7 @@
 		}
 	}
 	&.show {
-		height: auto;	
+		/*height: auto;	*/
 		button {
 			background: url(images/arrw-up-sml.png) no-repeat center center;
 			background-image: url(images/arrw-up-sml.svg), none;

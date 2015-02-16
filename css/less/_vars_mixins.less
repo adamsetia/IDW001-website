@@ -1,11 +1,12 @@
 @breakpoint1 : 768px;
 @breakpoint2 : 1024px;
 @breakpoint3 : 1200px;
-@font-size : 18px;
+@font-size : 16px;
 @line-height : 1.333em;
 
 @color-black: #000;
 @color-white: #fff;
+@bg-owhite: #ebebec;
 @color-option : #414046;
 @color: @color-black;
 @color-white-hvr : darken(@color-white, 20%);
@@ -18,6 +19,7 @@
 @nav-grey: lighten(@color-black, 23%);
 @foot-grey: #8c8c8c;
 @filt-grey: #a3a5a7;
+@stat-bg: #c7c7c7;
 
 .avenirBold() {
 	font-family: 'AvenirNextLTPro-Bold';
@@ -38,6 +40,7 @@
 	width: @w;
 	height: @h;	
 }
+
 .positions(@type: relative, @l:0, @t:0, @r:auto, @b:auto) {
 	position: @type;
 	left: @l;

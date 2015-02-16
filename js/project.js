@@ -9,9 +9,21 @@
 		wrap = $('.wrapper'),
 		bgWrap = wrap.find('.home-banners');
 		
+		skrollr.init({
+			smoothScrolling: false,
+			mobileDeceleration: 0.004,
+				forceHeight: false
+		});
+		
+		$( win ).resize(function() {
+			updateBH();
+		});
+		
 		if(bgWrap[0]) {
 			initBGS();
+			$( win ).resize();
 		}
+		
 	})
 	
 	function initBGS() {
@@ -44,8 +56,7 @@
 			slideShow: false,
 			buttonNext: bgWrap.find('.next'),
             buttonPrev: bgWrap.find('.prev'),
-			pagination: bgWrap.find('.pagination'),
-			sliderCallbackFunc: sliderSwitch
+			pagination: bgWrap.find('.pagination')
 		});
 		
 		function startSlideShow() {
@@ -53,11 +64,9 @@
 			loaderGif(false);
 			clearTimeout(timer);
 			var elem = bgWrap.find('> div'),
-				curItem = bgWrap.find('.item:first-child'),
 				ttime = 0.6;
 				
-			TweenLite.to(elem, ttime, {css:{autoAlpha: 1}, ease:Quad.easeOut});
-			TweenLite.to(curItem, ttime, {css:{autoAlpha: 1}, ease:Quad.easeOut, delay:ttime,  onComplete: function() {
+			TweenLite.to(elem, ttime, {css:{autoAlpha: 1}, ease:Quad.easeOut,  onComplete: function() {
 				if(sliding) {
 					timer = setTimeout(function(){
 						$('.home-banners').bgStretcher.play();
@@ -72,31 +81,6 @@
 				return;
 			}
 		}
-		function sliderSwitch() {
-			clearTimeout(timer);
-			$('.home-banners').bgStretcher.pause();
-			var curItem = bgWrap.find('.item.active'),
-				bgLi = bgWrap.find('.bgstretcher li'),
-				nextBG = bgWrap.find('.bgstretcher li.bgs-current'),
-				nextIndex = bgLi.index(nextBG), 
-				nextItem = bgWrap.find('.item:nth-child('+(nextIndex+1)+')'),
-				ttime = 0.6;
-				
-			// hide cur item
-			TweenLite.to(curItem, ttime, {css:{autoAlpha: 0}, ease:Quad.easeOut, onComplete: function() {
-				curItem.css('position', 'absolute').removeClass('active');
-			}});
-			//show next item
-			
-			TweenLite.to(nextItem, ttime, {css:{autoAlpha: 1}, ease:Quad.easeOut, delay:ttime, onStart:function(){
-				nextItem.css('position', 'relative').addClass('active');	
-			}, onComplete: function() {
-				timer = setTimeout(function(){
-					$('.home-banners').bgStretcher.play();
-				},intTime);
-			}});
-				
-		}
 	}
 	
 	function loaderGif(cond) {
@@ -105,6 +89,13 @@
 		} else {
 			wrap.find('.loader').remove();	
 		}
+	}
+	
+	function updateBH() {
+		var sH = wrap.find('.proj-details').height(),
+			winH = win.innerHeight
+			diffH = (winH - sH);
+		bgWrap.css('height', diffH);
 	}
 
 

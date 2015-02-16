@@ -5,9 +5,23 @@
 	$(function() {
 		win = window;
 		doc = document;
-		wrap = $('.wrapper');
+		wrap = $('.wrapper'),
+		header = wrap.find('header');
 		
 		initMobileMenu();
+		// check scroll top
+		$( doc ).scroll(function() {
+			if(!header.hasClass('fixed')) {
+				//console.log($(doc).scrollTop());
+				if($(doc).scrollTop() > 98) {
+					header.addClass('fixed');
+				}
+			} else {
+				if($(doc).scrollTop() < 98) {
+					header.removeClass('fixed');
+				}
+			}
+		});
 	})
 
 	function initMobileMenu() {
@@ -15,7 +29,7 @@
 			btn = header.find('.mob-nav button');
 			
 		btn.click(function() {
-			header.toggleClass('show-menu');	
+			header.toggleClass('show-menu');
 		});
 	}
 

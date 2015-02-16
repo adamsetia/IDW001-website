@@ -12,17 +12,37 @@
 		if(wrap.find('.iso-wrap')[0]) {
 			initIsotope();
 			initFilters();
+			initMobileFilt();
 		}
 	})
+	
+	function initMobileFilt() {
+		var elem = wrap.find('.work-filter'),
+			mobBtn = elem.find('button'),
+			holder = elem.find('.holder'),
+			resetH = 40;
+			
+		mobBtn.click(function() {
+			if(!elem.hasClass('show')) {
+				var nH = resetH + holder.outerHeight();
+				showMobFilt(nH);
+			} else {
+				showMobFilt(resetH);
+			}
+			elem.toggleClass('show');	
+		});
+		
+		function showMobFilt(val) {
+			elem.css('height', val);
+		}
+	}
+	
 	
 	function initFilters() {
 		var elem = wrap.find('.work-filter'),
 			filtBtns = elem.find('a:not(.filter-reset)'),
-			filtReset = elem.find('a.filter-reset'),
-			mobBtn = elem.find('button');
-		mobBtn.click(function() {
-			elem.toggleClass('show');	
-		});
+			filtReset = elem.find('a.filter-reset');
+		
 		// toggle active class
 		filtBtns.click(function(e) {
 			e.preventDefault();
