@@ -121,10 +121,41 @@ header {
 		}
 	}
 }
-.page-about {
+.page-about, .page-contact {
 	header {
 		.main-nav {
 			top: 30px;	
+		}
+		&.fixed {
+			.main-nav {
+				top: 34px;	
+			}
+		}
+	}
+}
+.page-about {
+	header {
+		.main-nav {
+			ul {
+				li {
+					ul {
+						left: -60px;
+					}
+				}
+			}
+		}
+	}
+}
+.page-contact {
+	header {
+		.main-nav {
+			ul {
+				li {
+					ul {
+						left: -35px;
+					}
+				}
+			}
 		}
 	}
 }

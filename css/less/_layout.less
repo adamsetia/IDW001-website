@@ -2,11 +2,17 @@
 .h100 {
 	height: 100%;	
 }
+.h35 {
+	height: 35%;	
+}
 .h50 {
 	height: 50%;	
 }
 .h60 {
 	height: 60%;	
+}
+.h70 {
+	height: 70%;	
 }
 .h80 {
 	height: 80%;	
@@ -23,6 +29,9 @@ section {
 		.btm-flush {
 			margin-bottom: -30px;
 		}
+		.container {
+			top: 0;	
+		}
 	}
 }
 .skrl-block {
@@ -33,7 +42,8 @@ section {
 		height: 100%;
 		background-attachment: fixed;
 		background-repeat: no-repeat;
-		.box-sizing();
+		background-size: cover;
+		background-position: center center;
 		&.top-center {
 			background-position: center top;
 		}
@@ -42,6 +52,27 @@ section {
 		}
 		&.center-center {
 			background-position: center center;
+		}
+	}
+}
+
+.custom {
+	&.logo {
+		position: absolute;
+		top: 50%;
+		margin-top: -152px;
+		right: 30px;
+	}
+	&.phone {
+		position: absolute;
+		top: 50%;
+		margin-top: -185px;
+		left: 0;
+		+ .phone {
+			left: 170px;
+		}
+		+ .phone + .phone {
+			left: 340px;
 		}
 	}
 }

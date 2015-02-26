@@ -839,6 +839,14 @@ h2,
   padding-bottom: 25px;
   line-height: 1.222em;
   font-size: 45px;
+  letter-spacing: -0.01em;
+}
+h3,
+.h3 {
+  color: #949494;
+  font-size: 21px;
+  line-height: 1.190em;
+  padding-bottom: 10px;
 }
 h4:first-child,
 .h4:first-child {
@@ -1161,8 +1169,136 @@ h4:first-child,
   background: url(images/arrw-up-sml.png) no-repeat center center;
   background-image: url(images/arrw-up-sml.svg), none;
 }
+/* flipper */
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000;
+  transform-style: preserve-3d;
+  /*  UPDATED! flip the pane when hovered 
+	&:hover {
+		.back {
+			transform: rotateY(0deg);
+		}
+		.front {
+			transform: rotateY(180deg);
+		}
+	}
+	*/
+  /* size */
+  width: inherit;
+  height: inherit;
+  /*  UPDATED! front pane, placed above back */
+  /* back, initially hidden pane */
+  /* flip speed goes here */
+}
+.flip-container .front,
+.flip-container .back {
+  width: inherit;
+  height: inherit;
+  /* hide back of pane during swap */
+  backface-visibility: hidden;
+  transition: 0.3s;
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.flip-container .front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+.flip-container .back {
+  transform: rotateY(-180deg);
+}
+.flip-container .flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+/* flipper end*/
+/*token*/
+.token {
+  display: block;
+  width: 102px;
+  height: 102px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.token.strategy {
+  background-image: url(images/token-strategy.png);
+}
+.token.strategy-grn {
+  background-image: url(images/token-strategy-grn.png);
+}
+.token.creative {
+  background-image: url(images/token-creative.png);
+}
+.token.creative-grn {
+  background-image: url(images/token-creative-grn.png);
+}
+.token.bed {
+  background-image: url(images/token-bed.png);
+}
+.token.bed-grn {
+  background-image: url(images/token-bed-grn.png);
+}
+.token.tools {
+  background-image: url(images/token-tools.png);
+}
+.token.tools-grn {
+  background-image: url(images/token-tools-grn.png);
+}
+.token.enquires {
+  background-image: url(images/token-enquires.png);
+}
+.token.enquires-grn {
+  background-image: url(images/token-enquires-grn.png);
+}
+.token.grad {
+  background-image: url(images/token-grad.png);
+}
+.token.grad-grn {
+  background-image: url(images/token-grad-grn.png);
+}
+.token.in {
+  background-image: url(images/token-IN.png);
+}
+.token.in-grn {
+  background-image: url(images/token-IN-grn.png);
+}
 /* tables */
 /* forms */
+.form-item {
+  padding-bottom: 3px;
+}
+input[type="text"],
+textarea {
+  height: 35px;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  width: 100%;
+  border: none;
+  background: #949494;
+  padding: 0 8px;
+  color: #fff;
+}
+textarea {
+  padding: 10px 8px;
+  height: 116px;
+  resize: none;
+}
+input[type="submit"] {
+  border: none;
+  background: none;
+  margin-top: 10px;
+}
+input[type="submit"]:hover {
+  color: #00db6e;
+}
 /* grids */
 .container {
   width: 100%;
@@ -1437,8 +1573,19 @@ header.show-menu {
 .front header .mob-nav a.no-deco {
   text-decoration: none;
 }
-.page-about header .main-nav {
+.page-about header .main-nav,
+.page-contact header .main-nav {
   top: 30px;
+}
+.page-about header.fixed .main-nav,
+.page-contact header.fixed .main-nav {
+  top: 34px;
+}
+.page-about header .main-nav ul li ul {
+  left: -60px;
+}
+.page-contact header .main-nav ul li ul {
+  left: -35px;
 }
 /* home start */
 .home-banners {
@@ -1674,11 +1821,17 @@ footer .scl-links ul li:first-child {
 .h100 {
   height: 100%;
 }
+.h35 {
+  height: 35%;
+}
 .h50 {
   height: 50%;
 }
 .h60 {
   height: 60%;
+}
+.h70 {
+  height: 70%;
 }
 .h80 {
   height: 80%;
@@ -1697,6 +1850,9 @@ section.content {
 section.content .btm-flush {
   margin-bottom: -30px;
 }
+section.content .container {
+  top: 0;
+}
 .skrl-block {
   width: 100%;
   overflow: hidden;
@@ -1706,12 +1862,8 @@ section.content .btm-flush {
   height: 100%;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
+  background-size: cover;
+  background-position: center center;
 }
 .skrl-block .bg.top-center {
   background-position: center top;
@@ -1722,19 +1874,42 @@ section.content .btm-flush {
 .skrl-block .bg.center-center {
   background-position: center center;
 }
+.custom.logo {
+  position: absolute;
+  top: 50%;
+  margin-top: -152px;
+  right: 30px;
+}
+.custom.phone {
+  position: absolute;
+  top: 50%;
+  margin-top: -185px;
+  left: 0;
+}
+.custom.phone + .phone {
+  left: 170px;
+}
+.custom.phone + .phone + .phone {
+  left: 340px;
+}
 /*sections*/
 /* project */
 .home-banners.project {
   height: 90%;
 }
-.proj-details {
-  height: 90px;
-  background-color: #c7c7c7;
-}
-.proj-details .grn-bar {
+.grn-bar {
   background-color: #00db6e;
   height: 8px;
   width: 100%;
+}
+.grn-bar.abs-btm {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.proj-details {
+  height: 90px;
+  background-color: #c7c7c7;
 }
 .proj-details .proj-stats {
   background-color: #414046;
@@ -1830,6 +2005,9 @@ section.content .btm-flush {
   padding: 0;
   position: relative;
 }
+.proj-details .proj-other .item .scl-links {
+  padding-top: 10px;
+}
 .proj-details .proj-other .item .label {
   padding: 0 10px;
   text-transform: uppercase;
@@ -1841,6 +2019,145 @@ section.content .btm-flush {
 }
 .proj-details .proj-other .item:first-child {
   border-left: none;
+}
+.proj-details.mobile {
+  height: 82px;
+}
+/* about */
+.pillar-grid .item {
+  padding: 0 0 20px 0;
+  overflow: visible;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+.pillar-grid .item .holder {
+  position: relative;
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -ms-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+  background-color: #525258;
+  width: 100%;
+  /* hover */
+}
+.pillar-grid .item .holder .info {
+  padding: 40px 20px 160px;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+.pillar-grid .item .holder .title {
+  -webkit-transition: color 0.2s ease-out 0s;
+  -moz-transition: color 0.2s ease-out 0s;
+  -ms-transition: color 0.2s ease-out 0s;
+  -o-transition: color 0.2s ease-out 0s;
+  transition: color 0.2s ease-out 0s;
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+  line-height: 1.200em;
+}
+.pillar-grid .item .holder:hover {
+  background-color: white;
+}
+.pillar-grid .item .holder:hover .title {
+  color: black;
+}
+.pillar-grid .item .holder:hover .flip-container .back {
+  transform: rotateY(0deg);
+}
+.pillar-grid .item .holder:hover .flip-container .front {
+  transform: rotateY(180deg);
+}
+.pillar-grid .item .icon-set {
+  display: block;
+  width: 102px;
+  height: 102px;
+  margin-left: -51px;
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+}
+#clients .iso-wrap .item {
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  border: 2px solid #ebebec;
+}
+#clients .iso-wrap .item .cbox,
+#clients .iso-wrap .item .bg-black {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#clients .iso-wrap .item .cbox {
+  position: relative;
+}
+#clients .iso-wrap .item .cbox .bg-black {
+  z-index: 20;
+  background-color: #000;
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease-out 0s;
+  -moz-transition: opacity 0.2s ease-out 0s;
+  -ms-transition: opacity 0.2s ease-out 0s;
+  -o-transition: opacity 0.2s ease-out 0s;
+  transition: opacity 0.2s ease-out 0s;
+}
+#clients .iso-wrap .item .cbox .table-display {
+  z-index: 30;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#clients .iso-wrap .item .cbox .table-display .table-cell {
+  text-align: center;
+  padding: 0 15px;
+  width: 100%;
+  height: 100%;
+}
+#clients .iso-wrap .item a:hover + .cbox .bg-black {
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+/* Contact */
+.add-blocks .item {
+  /* For IE 7 */
+  display: inline-block;
+  vertical-align: top;
+  /* For IE 7 */
+  zoom: 1;
+  *display: inline;
+  float: none !important;
+  width: 48%;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  padding-right: 20px;
+  padding-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.133em;
 }
 /*isotope*/
 .col-ylw {
@@ -1892,7 +2209,7 @@ section.content .btm-flush {
   width: 100%;
   height: 100%;
 }
-.iso-wrap .item .content img {
+.iso-wrap .item .content > img {
   display: none;
 }
 .iso-wrap .item .content a {
@@ -1956,6 +2273,10 @@ section.content .btm-flush {
   .h2 {
     font-size: 60px;
   }
+  h3,
+  .h3 {
+    font-size: 21px;
+  }
   .work-filter {
     height: 74px !important;
     padding: 27px 0;
@@ -1973,6 +2294,9 @@ section.content .btm-flush {
     float: none !important;
     padding: 0;
     margin: 0 20px;
+  }
+  .form-item {
+    max-width: 305px;
   }
   div.grid_centered,
   .grid_centered {
@@ -2115,11 +2439,11 @@ section.content .btm-flush {
   section .cont-gap {
     margin-top: 40px;
   }
+  .grn-bar {
+    height: 8px;
+  }
   .proj-details {
     height: 90px;
-  }
-  .proj-details .grn-bar {
-    height: 8px;
   }
   .proj-details .proj-stats {
     float: left;
@@ -2155,11 +2479,24 @@ section.content .btm-flush {
   .proj-details .proj-other .item .label {
     font-size: 16px;
   }
-  .proj-details .proj-other .item .scl-links {
-    padding-top: 10px;
-  }
   .proj-details .proj-other .item .scl-links ul li {
     padding-bottom: 5px !important;
+  }
+  .pillar-grid .item {
+    padding-right: 3px;
+    float: left;
+    width: 184px;
+  }
+  .pillar-grid .item .holder {
+    width: 181px;
+    height: 315px;
+  }
+  .pillar-grid .item .holder .info {
+    padding: 40px 20px;
+    width: 181px;
+  }
+  .pillar-grid .item .holder .title {
+    font-size: 24px;
   }
   .iso-wrap .grid-sizer {
     width: calc(33.33333333%);
@@ -2178,6 +2515,10 @@ section.content .btm-flush {
   h2,
   .h2 {
     font-size: 72px;
+  }
+  h3,
+  .h3 {
+    font-size: 21px;
   }
   .container {
     width: 960px;
@@ -2206,11 +2547,11 @@ section.content .btm-flush {
   section .cont-gap {
     margin-top: 80px;
   }
+  .grn-bar {
+    height: 10px;
+  }
   .proj-details {
     height: 100px;
-  }
-  .proj-details .grn-bar {
-    height: 10px;
   }
   .proj-details .proj-stats {
     height: 90px;
@@ -2241,11 +2582,21 @@ section.content .btm-flush {
   .proj-details .proj-other .item .label {
     font-size: 16px;
   }
-  .proj-details .proj-other .item .scl-links {
-    padding-top: 10px;
-  }
   .proj-details .proj-other .item .scl-links ul li {
     padding-bottom: 10px !important;
+  }
+  .pillar-grid .item {
+    width: 232px;
+  }
+  .pillar-grid .item .holder {
+    width: 229px;
+    height: 315px;
+  }
+  .pillar-grid .item .holder .info {
+    width: 229px;
+  }
+  .pillar-grid .item .holder .title {
+    font-size: 30px;
   }
   .iso-wrap .grid-sizer {
     width: calc(25%);
@@ -2288,11 +2639,11 @@ section.content .btm-flush {
   .iso-wrap .item.w2 {
     width: calc(40%);
   }
+  .grn-bar {
+    height: 12px;
+  }
   .proj-details {
     height: 118px;
-  }
-  .proj-details .grn-bar {
-    height: 12px;
   }
   .proj-details .proj-stats {
     height: 106px;
@@ -2321,5 +2672,15 @@ section.content .btm-flush {
   }
   .proj-details .proj-other .item .scl-links {
     padding-top: 20px;
+  }
+  .pillar-grid .item {
+    width: 270px;
+  }
+  .pillar-grid .item .holder {
+    width: 267px;
+    height: 315px;
+  }
+  .pillar-grid .item .holder .info {
+    width: 267px;
   }
 }

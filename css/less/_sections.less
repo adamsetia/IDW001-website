@@ -1,21 +1,25 @@
 /*sections*/
+@pillar-pad: 3px;
 /* project */
 .home-banners.project {
 	height: 90%;
 }
+@gH : 8px;
+.grn-bar {
+	background-color: @col-grn;
+	height: @gH;
+	width: 100%;
+	&.abs-btm {
+		position: absolute;
+		bottom: 0;
+		left: 0;	
+	}
+}
 .proj-details {
 	@sH : 90px;
-	@gH : 8px;
 	@pjh: (@sH - @gH) ;
 	height: @sH;
-	background-color: @stat-bg;
-	.grn-bar {
-		background-color: @col-grn;
-		height: @gH;
-		width: 100%;
-	}
-	
-	.proj-stats {
+	background-color: @stat-bg;.proj-stats {
 		background-color: @color-option;
 		color: @bg-owhite;
 		height: @pjh;
@@ -72,6 +76,9 @@
 					.inline-block();	
 				}
 			}
+			.scl-links {
+				padding-top: 10px;
+			}
 			.label {
 				padding: 0 10px;
 				text-transform: uppercase;
@@ -85,16 +92,121 @@
 			}
 		}
 	}
+	&.mobile {
+		height: @pjh;
+	}
+}
+
+/* about */
+.pillar-grid {
+	.item {
+		padding: 0 0 20px 0;
+		overflow: visible;
+		.box-sizing();
+		.holder {
+			position: relative;
+			.transitions(all);
+			background-color: #525258;
+			width: 100%;
+			.info {
+				padding: 40px 20px 160px;
+				.box-sizing();
+				width: 100%;
+				position: relative;
+				height: 100%;
+			}
+			.title {
+				.transitions(color);
+				text-align: center;
+				color: #fff;
+				font-size: 30px;
+				line-height: 1.200em;
+			}
+			/* hover */
+			&:hover {
+				background-color: white;
+				.title {
+					color: black;
+				}
+				.flip-container {
+					.back {
+						transform: rotateY(0deg);
+					}
+					.front {
+						transform: rotateY(180deg);
+					}
+				}
+			}
+		}
+		.icon-set {
+			display: block;
+			width: 102px;
+			height: 102px;
+			margin-left: -51px;
+			position: absolute;
+			bottom: 35px;
+			left: 50%;
+		}
+	}
+}
+#clients .iso-wrap {
+	.item {
+		.box-sizing();
+		border: 2px solid @bg-owhite;
+		.cbox, .bg-black {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+		.cbox {
+			position: relative;
+			.bg-black {
+				z-index: 20;
+				background-color: #000;
+				.setOpacity();
+				.transitions(opacity);
+			}
+			.table-display {
+				z-index: 30;
+				position: relative;
+				width: 100%;
+				height: 100%;
+				.table-cell {
+					text-align: center;
+					padding: 0 15px;
+					width: 100%;
+				height: 100%;	
+				}
+			}
+		}
+		a:hover + .cbox .bg-black {
+			.setOpacity(0);
+		}
+	}
+}
+
+/* Contact */
+.add-blocks {
+	.item {
+		.inline-block();
+		width: 48%;
+		.box-sizing();
+		padding-right: 20px;
+		padding-bottom: 20px;
+		font-size: 15px;
+		line-height: 1.133em;
+	}
 }
 .setSections(@w) when (@w = @breakpoint1) {
+	@gH : 8px;
+	.grn-bar {
+		height: @gH;
+	}
 	.proj-details {
 		@sH : 90px;
-		@gH : 8px;
 		@pjh: (@sH - @gH) ;
 		height: @sH;
-		.grn-bar {
-			height: @gH;
-		}
+		
 		.proj-stats {
 			float: left;
 			height: @pjh;
@@ -128,7 +240,6 @@
 					font-size: 16px;
 				}
 				.scl-links {
-					padding-top: 10px;
 					ul li {
 						padding-bottom: 5px !important;	
 					}
@@ -136,16 +247,36 @@
 			}
 		}
 	}
+	.pillar-grid {
+		@item-w: 184px;
+		.item {
+			padding-right: @pillar-pad;
+			float: left;
+			width: @item-w;
+			.holder {
+				width: (@item-w - @pillar-pad);
+				height: 315px;	
+				.info {
+					padding: 40px 20px;
+					width: (@item-w - @pillar-pad);
+				}
+				.title {
+					font-size: 24px;	
+				}
+			}
+		}
+	}
 }	
 .setSections(@w) when (@w = @breakpoint2) {
+	@gH : 10px;
+	.grn-bar {
+		height: @gH;
+	}
 	.proj-details {
 		@sH : 100px;
-		@gH : 10px;
 		@pjh: (@sH - @gH) ;
 		height: @sH;
-		.grn-bar {
-			height: @gH;
-		}
+		
 		.proj-stats {
 			height: @pjh;
 			.item {
@@ -174,7 +305,6 @@
 					font-size: 16px;
 				}
 				.scl-links {
-					padding-top: 10px;
 					ul li {
 						padding-bottom: 10px !important;	
 					}
@@ -182,16 +312,32 @@
 			}
 		}
 	}
+	.pillar-grid {
+		@item-w: 232px;
+		.item {
+			width: @item-w;
+			.holder {
+				width: (@item-w - @pillar-pad);
+				height: 315px;	
+				.info {
+					width: (@item-w - @pillar-pad);
+				}
+				.title {
+					font-size: 30px;	
+				}
+			}
+		}
+	}
 }	
 .setSections(@w) when (@w = @breakpoint3) {
+	@gH : 12px;
+	.grn-bar {
+		height: @gH;
+	}
 	.proj-details {
 		@sH : 118px;
-		@gH : 12px;
 		@pjh: (@sH - @gH);
 		height: @sH;
-		.grn-bar {
-			height: @gH;
-		}
 		.proj-stats {
 			height: @pjh;
 			.item {
@@ -221,5 +367,17 @@
 			}
 		}
 	}
-	
+	.pillar-grid {
+		@item-w: 270px;
+		.item {
+			width: @item-w;
+			.holder {
+				width: (@item-w - @pillar-pad);
+				height: 315px;	
+				.info {
+					width: (@item-w - @pillar-pad);
+				}
+			}
+		}
+	}
 }	

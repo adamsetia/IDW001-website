@@ -164,6 +164,106 @@
 	}
 }
 
+/* flipper */
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000;
+	transform-style: preserve-3d;
+	/*  UPDATED! flip the pane when hovered 
+	&:hover {
+		.back {
+			transform: rotateY(0deg);
+		}
+		.front {
+			transform: rotateY(180deg);
+		}
+	}
+	*/
+	/* size */
+	width: inherit;
+	height: inherit;
+	.front, .back {
+		width: inherit;
+		height: inherit;
+		/* hide back of pane during swap */
+		backface-visibility: hidden;
+		transition: 0.3s;
+		transform-style: preserve-3d;
+	
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	/*  UPDATED! front pane, placed above back */
+	.front {
+		z-index: 2;
+		transform: rotateY(0deg);
+	}
+	/* back, initially hidden pane */
+	.back {
+		transform: rotateY(-180deg);
+	}
+	/* flip speed goes here */
+	.flipper {
+		transition: 0.6s;
+		transform-style: preserve-3d;
+	
+		position: relative;
+	}
+}
+/* flipper end*/
+
+/*token*/
+.token {
+	display: block;
+	width: 102px;
+	height: 102px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	&.strategy {
+		background-image: url(images/token-strategy.png);
+	}
+	&.strategy-grn {
+		background-image: url(images/token-strategy-grn.png);
+	}
+	&.creative {
+		background-image: url(images/token-creative.png);
+	}
+	&.creative-grn {
+		background-image: url(images/token-creative-grn.png);
+	}
+	&.bed {
+		background-image: url(images/token-bed.png);
+	}
+	&.bed-grn {
+		background-image: url(images/token-bed-grn.png);
+	}
+	&.tools {
+		background-image: url(images/token-tools.png);
+	}
+	&.tools-grn {
+		background-image: url(images/token-tools-grn.png);
+	}
+	&.enquires {
+		background-image: url(images/token-enquires.png);
+	}
+	&.enquires-grn {
+		background-image: url(images/token-enquires-grn.png);
+	}
+	&.grad {
+		background-image: url(images/token-grad.png);
+	}
+	&.grad-grn {
+		background-image: url(images/token-grad-grn.png);
+	}
+	&.in {
+		background-image: url(images/token-IN.png);
+	}
+	&.in-grn {
+		background-image: url(images/token-IN-grn.png);
+	}
+	
+}
 .setComponents(@w) when (@w = @breakpoint1) {
 	.work-filter {
 		height: 74px !important;;

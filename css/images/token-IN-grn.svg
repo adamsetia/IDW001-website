@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="102px" height="102px" viewBox="0 0 102 102" enable-background="new 0 0 102 102" xml:space="preserve">
+<path fill="#4BBA77" d="M87.167,14.938c-19.778-19.917-51.842-19.917-71.619,0c-19.778,19.917-19.778,52.209,0,72.125
+	c19.776,19.917,51.84,19.917,71.619,0C106.945,67.146,106.945,34.854,87.167,14.938"/>
+<g>
+	<defs>
+		<path id="SVGID_1_" d="M0.005,52.854c0.159,12.518,5.824,24.56,13.596,33.072C6.554,77.165,2.307,66.004,2.333,53.852
+			C2.397,25.674,25.424,2.728,52.976,2.853C67.5,2.916,80.616,8.897,89.764,18.663C80.922,7.914,66.899,0.211,51.94,0.031
+			c-0.226-0.002-0.452-0.005-0.677-0.005C21.991,0.026-0.375,22.832,0.005,52.854"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-46.2715" y1="268.2402" x2="-45.3061" y2="268.2402" gradientTransform="matrix(-41.0467 -41.0467 -41.0467 41.0467 9166.3525 -12856.1318)">
+		<stop  offset="0" style="stop-color:#DCDDDE"/>
+		<stop  offset="0.3204" style="stop-color:#A4BEA4"/>
+		<stop  offset="0.9918" style="stop-color:#009444"/>
+		<stop  offset="1" style="stop-color:#009444"/>
+	</linearGradient>
+	<polygon clip-path="url(#SVGID_2_)" fill="url(#SVGID_3_)" points="44.694,131.313 -43.022,42.977 44.694,-45.36 132.412,42.977 	
+		"/>
+</g>
+<g>
+	<rect x="27.275" y="33.087" fill="#FFFFFF" width="11.001" height="38.482"/>
+	<path fill="#FFFFFF" d="M33.125,30.757c-2.841,0-5.151-2.305-5.151-5.176c0-2.846,2.311-5.152,5.151-5.152
+		c2.844,0.027,5.151,2.342,5.151,5.152C38.276,28.452,35.969,30.757,33.125,30.757L33.125,30.757z"/>
+	<path fill="#FFFFFF" d="M76.726,71.569H65.751V47.79c0-2.783-0.804-4.742-4.212-4.742c-5.688,0-6.788,4.742-6.788,4.742v23.779
+		H43.78V33.087h10.971v3.682c1.583-1.18,5.5-3.654,11-3.654c3.569,0,10.975,2.127,10.975,15.006V71.569z"/>
+</g>
+</svg>

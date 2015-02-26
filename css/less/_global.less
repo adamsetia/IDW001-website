@@ -159,12 +159,16 @@ h2, .h2 {
 	padding-bottom: 25px;
 	line-height: 1.222em;
 	font-size: 45px;
+	letter-spacing: -0.01em;
 	span {
 		
 	}
 }
 h3, .h3 {
-	
+	color: @col-grey;
+	font-size: 21px;
+	line-height: 1.190em;
+	padding-bottom: 10px;
 }
 h4, .h4 {
 	
@@ -285,7 +289,9 @@ ul {
 	h2, .h2 {
 		font-size: 60px;
 	}
-	
+	h3, .h3 {
+		font-size: 21px;
+	}
 }	
 .setGlobal(@w) when (@w = @breakpoint2) {
 	br {
@@ -293,5 +299,8 @@ ul {
 	}
 	h2, .h2 {
 		font-size: 72px;
+	}
+	h3, .h3 {
+		font-size: 21px;
 	}
 }	
