@@ -2127,6 +2127,12 @@ section.content .container {
   height: 100%;
 }
 #clients .iso-wrap .item .cbox .table-display .table-cell {
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
   text-align: center;
   padding: 0 15px;
   width: 100%;
