@@ -2,6 +2,7 @@
 @import 'font-awesome.min.css';
 @import 'hover-min.css';
 @import 'owl.carousel.css';
+@import 'bigvideo.css';
 /* webfotnts */
 /*! normalize.css v1.1.2 | MIT License | git.io/normalize */
 /* ==========================================================================
@@ -1266,6 +1267,19 @@ h4:first-child,
 .token.in-grn {
   background-image: url(images/token-IN-grn.png);
 }
+.video-holder {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 30;
+}
+.video-holder ~ .grn-bar {
+  z-index: 50;
+}
+.video-holder.fixed {
+  position: fixed;
+  z-index: -1;
+}
 /* tables */
 /* forms */
 .form-item {
@@ -1820,6 +1834,9 @@ footer .scl-links ul li:first-child {
 /* layout start */
 .h100 {
   height: 100%;
+}
+.h200 {
+  height: 200%;
 }
 .h35 {
   height: 35%;

@@ -9,6 +9,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>Idea Works</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/main.css">
@@ -66,6 +67,7 @@
     <!-- holder --> 
   </header>
   <section id="us" class="h100">
+  	<div id="vid1" class="video-holder h100" data-video="videos/_working_logo_1" data-fallback="img/bg-idw.jpg" data-loop="false"></div>
     <div class="grn-bar abs-btm"></div>
   </section>
   <!-- #proj-head -->
@@ -191,12 +193,8 @@
   </section>
   <!-- content -->
   <section id="bg1" class="skrl-block h80">
-    <div class="bg" style="background-image:url(img/bg-rad-black.jpg)"
-    		data-anchor-target="#bg1"
-        	data-center="background-position: 50% 0px;"
-            data-top-bottom="background-position: 50% -200px;"
-            data-bottom-top="background-position: 50% 200px;"
-        >
+    <div class="bg">
+        <div id="vid2" class="video-holder h100" data-video="videos/video_grade_DEFLICKER4" data-fallback="img/bg-idw.jpg" data-loop="true"></div>
     </div>
     <!-- bg --> 
   </section>
@@ -378,9 +376,6 @@
   <!-- footer --> 
 </div>
 <!-- wrapper --> 
-<script>
-	var bgImgs = ["img/home-1.jpg", "img/home-2.jpg", "img/home-3.jpg"];
-</script> 
 <script src="js/vendor/jquery-1.11.1.min.js"></script> 
 <script src="js/greensock/TweenLite.min.js"></script> 
 <script src="js/greensock/easing/EasePack.min.js"></script> 
@@ -388,8 +383,10 @@
 <script src="js/vendor/jquery.imgpreload.min.js"></script>
 <script src="js/vendor/isotope.pkgd.min.js"></script>
 <script src="js/vendor/jquery.inview.min.js"></script>
-<script src="js/vendor/jquery-bgstretcher-3.3.0.min.js"></script> 
 <script src="js/vendor/skrollr.min.js"></script> 
+<script src="js/vendor/imagesloaded.pkgd.min.js"></script>
+<script src="js/vendor/video.js"></script>
+<script src="js/vendor/bigvideo.js"></script>
 <script src="js/plugins.js"></script> 
 <script src="js/main.js"></script> 
 <script src="js/about.js"></script>
