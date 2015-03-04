@@ -23,6 +23,10 @@
 			initBGS();
 			$( win ).resize();
 		}
+		if(wrap.find('.proj-stats .val')[0]) {
+			initCount();
+			//wrap.find('.proj-stats .val').countTo();
+		}
 		
 	})
 	
@@ -97,6 +101,25 @@
 			diffH = (winH - sH);
 		bgWrap.css('height', diffH);
 	}
-
+	
+	function initCount() {
+		var elem = wrap.find('.proj-stats .item');
+		elem.each(function(ind) {
+            var $this = $(this),
+				val  = $this.find('.val'),
+				w = $this.width(),
+				d_from = val.data('from'),
+				d_to = val.data('to'),
+				d_decimal = val.data('decimals'),
+				vid = val.attr('id');
+			$this.css('width', w);
+			val.text(d_from).css('visibility', 'visible');
+			console.log(val, d_from, d_to, d_decimal, 1);
+			var numAnim = new countUp(vid, d_from, d_to, d_decimal, 1);
+			numAnim.start(function() {
+				$this.css('width', '');
+			});
+        });
+	}
 
 })(jQuery, this, this.document);

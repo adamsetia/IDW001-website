@@ -8,6 +8,12 @@
 	img {
 		max-width: none;
 	}
+	.listUnstyled();
+	ul {
+		li {
+			.li-plain();
+		}
+	}
 }
 .bgstretcher-area {
  	text-align: left;
@@ -136,23 +142,29 @@
 		}
 	}
 	background-color: @color-option;
-	.avenirBold();
-	font-size: 17px;
-	line-height: 1.176em;
+	.avenirMed();
+	font-size: 12px;
+	text-transform: uppercase;
 	text-align: center;
 	
 	.box-sizing();
 	
-	.linkSet(@filt-grey, @filt-grey, inherit, none, none);
+	.linkSet(@filt-grey, @col-grn, inherit, none, none);
 	.holder {
 		padding: 15px 0;	
 	}
 	a {
 		display: block;
 		outline: none;
-		padding-bottom: 10px;
+		padding: 0 0 10px 0;
+		.transitions(color);
 		&:active, &.active {
 			color: @col-grn;	
+		}
+		&.filter-reset {
+			&:hover {
+				color: @col-grn;	
+			}
 		}
 	}
 	&.show {
@@ -286,8 +298,26 @@
 		}
 		a {
 			.inline-block();
-			padding: 0;
-			margin: 0 20px;
+			padding: 0 0 0 14px;
+			margin: 0 10px;
+			background: url(images/filt-tick.png) no-repeat left 7px;
+			&.active {
+				background-position: left -44px;
+			}
+			&.filter-reset {
+				background: none;
+				padding: 0;
+				&:hover {
+					color: @col-grn;	
+				}
+				&:before {
+					.fa-defaults();
+					content: '\f112';
+				}
+				span {
+					display: none;	
+				}
+			}
 		}
 	}
 }	

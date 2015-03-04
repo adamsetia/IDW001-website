@@ -58,10 +58,7 @@
 		filtReset.click(function(e) {
 			e.preventDefault();
 			var $this = $(this);
-			if(!$this.hasClass('active')) {
-				$this.addClass('active');
-				filtBtns.removeClass('active');
-			}
+			filtBtns.removeClass('active');
 			filterEntries("");
 		});
 		function checkFilters() {
