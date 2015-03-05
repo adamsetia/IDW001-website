@@ -23,6 +23,20 @@
 .minH50 {
 	min-height: 50%;	
 }
+.pos-rel {
+	.positions();
+}
+.pos-fixed {
+	.positions(fixed);	
+	width: 100%;
+	
+	&.top {
+		z-index: 10;
+	}
+	&.btm {
+		z-index: 5;
+	}
+}
 section {
 	position: relative;
 	&.content {
