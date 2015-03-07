@@ -1864,6 +1864,14 @@ footer .scl-links ul li:first-child {
   clear: both;
 }
 /* layout start */
+#skrollr-body {
+  height: 100%;
+  overflow: visible;
+  position: relative;
+}
+.skrollr-desktop body {
+  height: 100% !important;
+}
 .h100 {
   height: 100%;
 }

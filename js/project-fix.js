@@ -9,10 +9,10 @@
 		wrap = $('.wrapper'),
 		bgWrap = wrap.find('.home-banners');
 		
-		/*skrollr.init({
+		skrollr.init({
 			smoothScrolling: false,
 			mobileDeceleration: 0.004
-		});*/
+		});
 		
 		$( win ).resize(function() {
 			updateBH();
