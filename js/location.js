@@ -1,61 +1,44 @@
 (function ($, window, document) {
-	var geocoder;
-
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
-	}
-	//Get the latitude and the longitude;
-	function successFunction(position) {
-		var lat = position.coords.latitude;
-   		var lng = position.coords.longitude;
-		//var lat = -37.815151;
-		//var lng = 144.967587;
-		codeLatLng(lat, lng)
-	}
+	var initialLocation;
+	var siberia = new google.maps.LatLng(60, 105);
+	var newyork = new google.maps.LatLng(40.69847032728747, -73.9514422416687);
+	var browserSupportFlag =  new Boolean();
 	
-	function errorFunction() {
-		alert("Geocoder failed");
-	}
+	function initialize() {
+		var myOptions = {
+			zoom: 6,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+	  	var map = new google.maps.Map(document.getElementById("map1"), myOptions);
 	
-	function initializeLoc() {
-		geocoder = new google.maps.Geocoder();
-	}
+		// Try W3C Geolocation (Preferred)
+		if(navigator.geolocation) {
+			browserSupportFlag = true;
+			navigator.geolocation.getCurrentPosition(function(position) {
+			initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+			map.setCenter(initialLocation);
+			}, function() {
+				handleNoGeolocation(browserSupportFlag);
+			});
+		}
+		// Browser doesn't support Geolocation
+		else {
+			browserSupportFlag = false;
+			handleNoGeolocation(browserSupportFlag);
+		}
 	
-	function codeLatLng(lat, lng) {
-		var latlng = new google.maps.LatLng(lat, lng);
-		geocoder.geocode({
-			'latLng': latlng
-		}, function(results, status) {
-			if (status == google.maps.GeocoderStatus.OK) {
-				//console.log(results)
-				if (results[1]) {
-					//formatted address
-					//alert(results[0].formatted_address)
-						//find country name
-					for (var i = 0; i < results[0].address_components.length; i++) {
-						for (var b = 0; b < results[0].address_components[i].types.length; b++) {
-	
-							//there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
-							if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
-								//this is the object you are looking for
-								city = results[0].address_components[i];
-								break;
-							}
-						}
-					}
-					//city data
-					alert(city.short_name + " " + city.long_name)
-	
-	
-				} else {
-					alert("No results found");
-				}
+		function handleNoGeolocation(errorFlag) {
+			if (errorFlag == true) {
+				alert("Geolocation service failed.");
+				initialLocation = newyork;
 			} else {
-				alert("Geocoder failed due to: " + status);
+				alert("Your browser doesn't support geolocation. We've placed you in Siberia.");
+				initialLocation = siberia;
 			}
-		});
+			map.setCenter(initialLocation);
+		}
 	}
 	
-	google.maps.event.addDomListener(window, 'load', initializeLoc);
+	google.maps.event.addDomListener(window, 'load', initialize);
 
 })(jQuery, this, this.document);
