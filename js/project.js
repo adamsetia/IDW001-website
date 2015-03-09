@@ -2,17 +2,18 @@
 	var win,
 		doc,
 		wrap,
-		bgWrap;
+		bgWrap,
+		bgImgs = new Array();
 	$(function() {
 		win = window;
 		doc = document;
 		wrap = $('.wrapper'),
-		bgWrap = wrap.find('.home-banners');
+		bgWrap = wrap.find('.home-banners'),
+		items = bgWrap.find('.item');
 		
 		skrollr.init({
 			smoothScrolling: false,
-			mobileDeceleration: 0.004,
-				forceHeight: false
+			mobileDeceleration: 0.004
 		});
 		
 		$( win ).resize(function() {
@@ -31,6 +32,12 @@
 	})
 	
 	function initBGS() {
+		// create bgImgs var
+		items.each(function(ind) {
+            var $this = $(this),
+				img = $this.data('img');
+			bgImgs.push(img);
+        });
 		var sliding = bgImgs.length > 1 ? true : false,
 			loaded = 0,
 			intTime = 5000,
@@ -56,7 +63,7 @@
 			imageHeight: 1050,
 			nextSlideDelay: intTime,
 			slideShowSpeed: transSpeed,
-			anchoringImg: "center top",
+			anchoringImg: "center center",
 			slideShow: false,
 			buttonNext: bgWrap.find('.next'),
             buttonPrev: bgWrap.find('.prev'),
@@ -114,7 +121,6 @@
 				vid = val.attr('id');
 			$this.css('width', w);
 			val.text(d_from).css('visibility', 'visible');
-			console.log(val, d_from, d_to, d_decimal, 1);
 			var numAnim = new countUp(vid, d_from, d_to, d_decimal, 1);
 			numAnim.start(function() {
 				$this.css('width', '');

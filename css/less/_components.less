@@ -89,6 +89,10 @@
 			background: url(images/icon-facebook.png) no-repeat top left;
 			background-image: url(images/icon-facebook.svg), none;
 		}
+		&.scl-facebook2 {
+			background: url(images/icon-facebook2.png) no-repeat top left;
+			background-image: url(images/icon-facebook2.svg), none;
+		}
 		&.scl-linkedin2 {
 			background: url(images/icon-linkedin2.png) no-repeat top left;
 			background-image: url(images/icon-linkedin2.svg), none;
@@ -118,6 +122,35 @@
 	}
 	
 	
+}
+.sharethis-wrapper {
+	> span {
+		.inline-block();
+		margin: 8px 4px 10px;
+		width: 27px;
+		height: 27px;
+		background-position: left top;
+		background-size: contain;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		.setOpacity(1);	
+		.transitions(opacity);
+		&:hover {
+			.setOpacity();	
+		}
+	}
+	.st_facebook_custom {
+		background: url(images/icon-facebook.png) no-repeat top left;
+		background-image: url(images/icon-facebook.svg), none;
+	}
+	.st_linkedin_custom {
+		background: url(images/icon-linkedin2.png) no-repeat top left;
+		background-image: url(images/icon-linkedin2.svg), none;
+	}
+	.st_twitter_custom {
+		background: url(images/icon-twitter.png) no-repeat top left;
+		background-image: url(images/icon-twitter.svg), none;
+	}
 }
 /* isotope filter */
 .work-filter {
@@ -289,6 +322,22 @@
 		z-index: -1;	
 	}
 }
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+	margin: 20px auto 40px !important;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
 .setComponents(@w) when (@w = @breakpoint1) {
 	.work-filter {
 		height: 74px !important;;

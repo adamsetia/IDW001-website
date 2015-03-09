@@ -7,6 +7,53 @@
 .skrollr-desktop body {
 	height: 100% !important;
 }
+.parallax-image-wrapper {
+	position: fixed;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	.bg {
+		width: 100%;
+		height: 100%;	
+	}
+}
+.parallax-image-wrapper-50 {
+	height: 50%;
+	top: -50%;
+}
+.parallax-image-wrapper-70 {
+	height: 70%;
+	top: -70%;
+}
+.parallax-image-wrapper-100 {
+	height: 100%;
+	top: -100%;
+}
+.parallax-image {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+.parallax-image-50 {
+	height: 200%;
+	top: -50%;
+}
+.parallax-image-70 {
+	height: 200%;
+	top: -70%;
+}
+.parallax-image-100 {
+	height: 100%;
+	top: 0;
+}
+.parallax-image.skrollable-between {
+	display: block;
+}
+
 .h100 {
 	height: 100%;	
 }
@@ -28,6 +75,9 @@
 .h80 {
 	height: 80%;	
 }
+.h90 {
+	height: 90%;	
+}
 .minH50 {
 	min-height: 50%;	
 }
@@ -35,7 +85,9 @@
 	.positions();
 }
 .pos-fixed {
-	.positions(fixed);	
+	position: fixed !important;
+	top: 0;
+	left: 0;	
 	width: 100%;
 	
 	&.top {

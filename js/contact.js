@@ -12,6 +12,10 @@
 		doc = document;
 		wrap = $('.wrapper');
 		
+		skrollr.init({
+			smoothScrolling: false,
+			mobileDeceleration: 0.004
+		});
 		
 		// set defaults
 		setDefaults();

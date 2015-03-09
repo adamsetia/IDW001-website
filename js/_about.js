@@ -1,8 +1,7 @@
 (function ($, window, document) {
 	var win,
 		doc,
-		wrap,
-		bgImgs = ["/sites/all/themes/ideaworks/assets/img/bg-ppl.jpg"];;
+		wrap;
 	$(function() {
 		win = window;
 		doc = document;
@@ -10,7 +9,8 @@
 		
 		skrollr.init({
 			smoothScrolling: false,
-			mobileDeceleration: 0.004
+			mobileDeceleration: 0.004,
+				forceHeight: false
 		});
 		
 		if(wrap.find('.iso-wrap')[0]) {
@@ -87,7 +87,7 @@
 					{ type: "video/ogg",  src: vidname+".ogv" }
 				]);
 				BV.getPlayer().on('loadeddata', function() {
-					//console.log('loaded video');
+					console.log('loaded video');
 				});
 	
 				BV.getPlayer().on('ended', function() {	
@@ -97,7 +97,7 @@
 			
 			function vidOut() {
 				//TweenLite.to
-				//console.log('video end');
+				console.log('video end');
 			}
 		});
 	}

@@ -2,12 +2,14 @@
 	var win,
 		doc,
 		wrap,
-		bgWrap;
+		bgWrap,
+		bgImgs = new Array();
 	$(function() {
 		win = window;
 		doc = document;
 		wrap = $('.wrapper'),
-		bgWrap = wrap.find('.home-banners');
+		bgWrap = wrap.find('.home-banners'),
+		items = bgWrap.find('.item');
 		
 		if(bgWrap[0]) {
 			initBGS();
@@ -15,6 +17,13 @@
 	})
 	
 	function initBGS() {
+		// create bgImgs var
+		items.each(function(ind) {
+            var $this = $(this),
+				img = $this.data('img');
+			bgImgs.push(img);
+        });
+		
 		var sliding = bgImgs.length > 1 ? true : false,
 			loaded = 0,
 			intTime = 5000,
@@ -24,6 +33,7 @@
 		updateNav();
 		// preload bg images
 		loaderGif(true);
+		
 		$.imgpreload(bgImgs, {
     		each: function() {
 				loaded ++;
@@ -55,7 +65,8 @@
 			var elem = bgWrap.find('> div'),
 				curItem = bgWrap.find('.item:first-child'),
 				ttime = 0.6;
-				
+			
+			curItem.addClass('active');
 			TweenLite.to(elem, ttime, {css:{autoAlpha: 1}, ease:Quad.easeOut});
 			TweenLite.to(curItem, ttime, {css:{autoAlpha: 1}, ease:Quad.easeOut, delay:ttime,  onComplete: function() {
 				if(sliding) {
