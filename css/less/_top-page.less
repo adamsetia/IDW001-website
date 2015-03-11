@@ -2,6 +2,9 @@
 .top-space {
 	margin-top: 60px;
 }
+.top-space-pad {
+	padding-top: 60px;
+}
 header {
 	height: 60px;
 	position: fixed;
@@ -140,7 +143,7 @@ header {
 			ul {
 				li {
 					ul {
-						left: -60px;
+						left: -84px;
 					}
 				}
 			}
@@ -164,6 +167,9 @@ header {
 .setTopPage(@w) when (@w = @breakpoint1) {
 	.top-space {
 		margin-top: 98px;
+	}
+	.top-space-pad {
+		padding-top: 98px;
 	}
 	header {
 		height: 98px;

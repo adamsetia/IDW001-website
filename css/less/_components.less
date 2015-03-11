@@ -123,6 +123,24 @@
 	
 	
 }
+.go-link {
+	&:link {
+		.avenirBold();
+		background: url(images/btn-go.png) no-repeat left top;
+		color: #b0b0b0;
+		display: inline-block;
+		font-size: 15px;
+		font-weight: normal;
+		height: 20px;
+		line-height: 22px;
+		padding-left: 30px;
+		text-decoration: none;
+		text-transform: uppercase;	
+	}
+	&:hover {
+		color: @col-grn;
+	}
+}
 .sharethis-wrapper {
 	> span {
 		.inline-block();
@@ -325,7 +343,7 @@
 
 .videoWrapper {
 	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
+	padding-bottom: 54.25%; /* 16:9 */
 	padding-top: 25px;
 	height: 0;
 	margin: 20px auto 40px !important;

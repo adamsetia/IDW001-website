@@ -5,7 +5,9 @@
 		map1,
 		map2,
 		custom_styles,
-		locations;
+		locations,
+		curLoc;
+	var geocoder;
 		
 	$(function() {
 		win = window;
@@ -22,7 +24,7 @@
 		// get user loc
 		//getUserLoc();
 		// map init
-		google.maps.event.addDomListener(window, 'load', initialize);
+		google.maps.event.addDomListener(window, 'load', start);
 	})
 	
 	function setDefaults() {
@@ -52,14 +54,54 @@
 			}
 		};
 	}
-	
-	function getUserLoc() {
-		
+	function start() {
+		geocoder = new google.maps.Geocoder();
+		initialize();
+		getUserLoc();
 	}
+	function getUserLoc() {
+		// Try W3C Geolocation (Preferred)
+		if(navigator.geolocation) {
+			browserSupportFlag = true;
+			navigator.geolocation.getCurrentPosition(function(position) {
+				var lat = position.coords.latitude;
+				var lng = position.coords.longitude;
+				codeLatLng(lat, lng);
+	
+			}, null);
+		}
+	}
+	function codeLatLng(lat, lng) {
+
+		var latlng = new google.maps.LatLng(lat, lng);
+		geocoder.geocode({'latLng': latlng}, function(results, status) {
+		  if (status == google.maps.GeocoderStatus.OK) {
+				if (results[1]) {
+					//find country name
+					for (var i=0; i<results[0].address_components.length; i++) {
+						for (var b=0;b<results[0].address_components[i].types.length;b++) {
+							//there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
+							if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
+								//this is the object you are looking for
+								city= results[0].address_components[i];
+								break;
+							}
+						}
+					}
+					//city data
+					//alert(city.short_name + " " + city.long_name)
+					curLoc = city.short_name;
+					initialize();
+				} 
+		  } 
+		});
+	  }
 	
 	function initialize() {
 		var mapAll = true;
-		if(curLoc) mapAll = false;
+		if(curLoc == "NSW" || curLoc == "QLD" || curLoc == "VIC" || curLoc == "Auckland" ) {
+			mapAll = false;
+		}
 		
 		// build map options
 		function mapOpts(cond, latLng) {
@@ -107,6 +149,8 @@
 			for (var i in locations) {
 				bound.extend( new google.maps.LatLng(locations[i].lat, locations[i].lng) );
 			}
+			
+    
 			map1.fitBounds(bound);
 			map2.fitBounds(bound);
 			map1.panBy(0, -99);
@@ -121,10 +165,16 @@
 		
 		// marker image
 		var url = themePath+'img/marker.png';
+		if(mapAll) url = themePath+'img/marker-sml.png';
 		var size = new google.maps.Size(100, 120);
+		if(mapAll) size = new google.maps.Size(70, 84);
 		if(window.devicePixelRatio > 1.5){
 			url = themePath+'img/marker@2x.png';
 			size = new google.maps.Size(200, 240);
+			if(mapAll) {
+				url = themePath+'img/marker-sml@2x.png';
+				size = new google.maps.Size(140, 168);
+			}
 		}
 		var image = {
 			url: url,
@@ -132,7 +182,18 @@
 			scaledSize: new google.maps.Size(100, 120),
 			origin: new google.maps.Point(0,0),
 			anchor: new google.maps.Point(50, 120)
+			
 		};
+		if(mapAll) {
+			image = {
+				url: url,
+				size: size,
+				scaledSize: new google.maps.Size(70, 84),
+				origin: new google.maps.Point(0,0),
+				anchor: new google.maps.Point(35, 84)
+				
+			};
+		}
 		
 		// add markers for all locations
 		for (var i in locations) {
