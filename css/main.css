@@ -1112,7 +1112,8 @@ h4,
 .scl-links.t2 ul li {
   padding: 0 4px 10px !important;
 }
-.go-link:link {
+.go-link:link,
+#location .ajax-processed:link {
   font-family: 'AvenirNextLTPro-Bold';
   background: url(images/btn-go.png) no-repeat left top;
   color: #b0b0b0;
@@ -1125,7 +1126,8 @@ h4,
   text-decoration: none;
   text-transform: uppercase;
 }
-.go-link:hover {
+.go-link:hover,
+#location .ajax-processed:hover {
   color: #00db6e;
 }
 .sharethis-wrapper > span {
@@ -1415,7 +1417,10 @@ h4,
 input[type="text"],
 input[type="email"],
 input[type="password"],
-textarea {
+textarea,
+select {
+  font-family: 'AvenirNextLTPro-Medium';
+  font-weight: normal;
   height: 35px;
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
@@ -1447,6 +1452,49 @@ input[type="submit"] {
 input[type="submit"]:hover {
   color: #00db6e;
 }
+::-webkit-input-placeholder {
+  color: #ebebec;
+}
+::-moz-placeholder {
+  color: #ebebec;
+}
+/* firefox 19+ */
+:-ms-input-placeholder {
+  color: #ebebec;
+}
+/* ie */
+input:-moz-placeholder {
+  color: #ebebec;
+}
+.customSelect {
+  /* Styles For Your Select Box */
+  font-family: 'AvenirNextLTPro-Medium';
+  font-weight: normal;
+  height: 35px;
+  line-height: 35px;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  width: 100%;
+  border: none;
+  background: #949494 url(images/listArrow.png) right center no-repeat;
+  padding: 0 8px;
+  color: #ebebec;
+}
+.customSelect.changed {
+  /* You can use this if you want a different style after user has made a selection */
+  color: #fff;
+}
+.customSelect .customSelectFocus {
+  /* You can use this if you want a different style after user has made a selection */
+}
+.customSelect .customSelectOpen {
+  /* You can use this if you want a different style after user has made a selection */
+}
+/* We can style the inner box, too */
 /* grids */
 .container {
   width: 100%;
@@ -2371,6 +2419,38 @@ section.content.no-pad {
   box-sizing: border-box;
   /* Opera/IE 8+ */
 }
+.pillar-grid .item a {
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -ms-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+}
+.pillar-grid .item a:link {
+  color: #00db6e;
+  text-decoration: none;
+  font-size: inherit;
+}
+.pillar-grid .item a:visited {
+  color: #00db6e;
+  text-decoration: none;
+}
+.pillar-grid .item a:hover {
+  color: #42ffa1;
+  text-decoration: none;
+}
+.pillar-grid .item a:active {
+  color: #00db6e;
+  text-decoration: none;
+}
+.pillar-grid .item a.active {
+  color: #42ffa1;
+  text-decoration: none;
+  cursor: default;
+}
+.pillar-grid .item a.no-deco {
+  text-decoration: none;
+}
 .pillar-grid .item .holder {
   z-index: 20;
   position: relative;
@@ -2514,6 +2594,14 @@ section.content.no-pad {
   width: 100%;
   height: 100%;
 }
+#clients .iso-wrap .item .content {
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -ms-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+  background-size: 100% 100%;
+}
 #clients .iso-wrap .item .cbox {
   position: relative;
 }
@@ -2552,7 +2640,10 @@ section.content.no-pad {
   width: 100%;
   height: 100%;
 }
-#clients .iso-wrap .item :hover .bg-black {
+#clients .iso-wrap .item:hover .content {
+  background-size: 110% 110%;
+}
+#clients .iso-wrap .item:hover .bg-black {
   -webkit-opacity: 0;
   -moz-opacity: 0;
   filter: alpha(opacity=0);
@@ -2581,7 +2672,7 @@ section.content.no-pad {
 }
 /*sections*/
 #people {
-  height: 590px;
+  height: 715px;
   background-color: #000;
   overflow: hidden;
 }
@@ -2608,93 +2699,6 @@ section.content.no-pad {
 }
 #people .owl-carousel .owl-stage-outer {
   overflow: visible;
-}
-#people .owl-carousel .item {
-  overflow: visible;
-  height: 390px;
-  width: 100%;
-}
-#people .owl-carousel .item .holder {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  /*padding: 0 30px;*/
-  overflow: visible;
-}
-#people .owl-carousel .item .holder img {
-  position: absolute;
-  bottom: 0;
-  max-width: none;
-}
-#people .owl-carousel .item .holder .info {
-  z-index: 100;
-  width: 300px;
-  position: absolute;
-  left: 50%;
-  bottom: 30px;
-  color: #fff;
-  font-size: 11px;
-  line-height: 1.4em;
-}
-#people .owl-carousel .item .holder .info .bg-black {
-  left: -150px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-#people .owl-carousel .item .holder .info .inner {
-  left: -150px;
-  -webkit-box-sizing: border-box;
-  /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;
-  /* Firefox, other Gecko */
-  box-sizing: border-box;
-  /* Opera/IE 8+ */
-  padding: 50px 25px 20px;
-}
-#people .owl-carousel .item .holder .info .bg-black {
-  background-color: #000;
-  -webkit-opacity: 0.7;
-  -moz-opacity: 0.7;
-  filter: alpha(opacity=70);
-  opacity: 0.7;
-}
-#people .owl-carousel .item .holder .info .btn-close {
-  position: absolute;
-  display: block;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  background: url(images/btn-close.png) no-repeat center center;
-  right: 15px;
-  top: 15px;
-}
-#people .owl-carousel .item .holder .info h4 {
-  font-size: 30px;
-  line-height: 1em;
-  color: #00db6e;
-  padding-bottom: 10px;
-}
-#people .owl-carousel .item .holder .info h5 {
-  font-family: 'AvenirNextLTPro-Medium';
-  font-weight: normal;
-  color: #fff;
-  font-size: 15px;
-  line-height: 1.2em;
-  padding-bottom: 10px;
-}
-#people .owl-carousel .item .holder .info .scl-links ul {
-  padding-bottom: 0;
-}
-#people .owl-carousel .item .holder .info .scl-links ul li {
-  float: left;
-  margin-right: 8px;
 }
 #people .owl-carousel .owl-nav .owl-prev,
 #people .owl-carousel .owl-nav .owl-next {
@@ -2758,12 +2762,213 @@ section.content.no-pad {
 #people .owl-item.inView .holder {
   /*.setOpacity();*/
 }
+#people .item {
+  overflow: visible;
+  height: 420px;
+  width: 100%;
+}
+#people .item .holder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  /*padding: 0 30px;*/
+  overflow: visible;
+}
+#people .item .holder .img-holder {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+}
+#people .item .holder .img-holder img {
+  position: relative;
+  bottom: 0;
+  max-width: none;
+  left: -50%;
+}
+#people .info {
+  display: none;
+  z-index: 100;
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.4em;
+}
+#people .info .bg-black {
+  left: -150px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#people .info .inner {
+  left: -150px;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  padding: 50px 25px 20px;
+}
+#people .info .bg-black {
+  background-color: #000;
+  -webkit-opacity: 0.7;
+  -moz-opacity: 0.7;
+  filter: alpha(opacity=70);
+  opacity: 0.7;
+}
+#people .info .btn-close {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: url(images/btn-close.png) no-repeat center center;
+  right: 15px;
+  top: 15px;
+}
+#people .info h4 {
+  font-size: 30px;
+  line-height: 1em;
+  color: #00db6e;
+  padding-bottom: 10px;
+}
+#people .info h5 {
+  font-family: 'AvenirNextLTPro-Medium';
+  font-weight: normal;
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.2em;
+  padding-bottom: 10px;
+}
+#people .info .scl-links ul {
+  padding-bottom: 0;
+}
+#people .info .scl-links ul li {
+  float: left;
+  margin-right: 8px;
+}
+#ppl0 img {
+  width: 190px;
+}
+#ppl1 img {
+  width: 206px;
+}
+#ppl2 img {
+  width: 175px;
+}
+#ppl3 img {
+  width: 149px;
+}
+#ppl4 img {
+  width: 149px;
+}
+#ppl5 img {
+  width: 149px;
+}
+#ppl6 img {
+  width: 157px;
+}
+#ppl7 img {
+  width: 176px;
+}
+#ppl8 img {
+  width: 140px;
+}
+#ppl9 img {
+  width: 157px;
+}
+#ppl10 img {
+  width: 130px;
+}
 /*sections*/
+.min-650 {
+  min-height: 700px;
+}
+#us {
+  min-height: 700px;
+}
+#us .grn-bar {
+  z-index: 70;
+}
 #vid1 {
+  min-height: 700px;
   position: absolute;
   width: 100%;
   top: 0;
   left: 0;
+}
+#us-logo2 {
+  visibility: hidden;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  z-index: 20;
+  color: #939598;
+}
+#us-logo2 .title-blurb {
+  visibility: hidden;
+  padding: 25px;
+  padding-top: 100px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  z-index: 20;
+}
+#us-logo2 .title-blurb .inner {
+  margin-top: 0;
+}
+#us-logo2 .title-blurb h2 {
+  color: #00db6e;
+  font-size: 18px;
+  line-height: 1.2em;
+  padding-bottom: 10px;
+}
+#us-logo2 .title-blurb p {
+  padding-bottom: 0;
+  line-height: 1.2em;
+  font-size: 13px;
+}
+#us-logo2 .table-display {
+  text-align: center;
+  width: 100%;
+}
+#us-logo2 .table-display .table-cell {
+  height: 100%;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+#us-logo2 .table-display .table-cell img.big-logo {
+  width: 80%;
+}
+#us-logo2 .bgstretcher-area,
+#us-logo2 .bgstretcher-page {
+  height: 100%;
+  min-height: 700px;
+}
+#us-logo2 .bgstretcher {
+  display: none;
+}
+#us-logo2 .big-holder {
+  position: relative;
+  padding-top: 30px;
 }
 #us-logo {
   letter-spacing: 0;
@@ -2793,7 +2998,13 @@ section.content.no-pad {
   visibility: hidden;
   padding: 25px;
   top: 50px;
-  width: 286px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
   z-index: 20;
 }
 #us-logo .title-blurb p {
@@ -2913,9 +3124,15 @@ section.content.no-pad {
   -moz-opacity: 0;
   filter: alpha(opacity=0);
   opacity: 0;
+  -webkit-transition: all 0.2s ease-out 0s;
+  -moz-transition: all 0.2s ease-out 0s;
+  -ms-transition: all 0.2s ease-out 0s;
+  -o-transition: all 0.2s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   position: absolute;
   left: 0;
   top: 0;
@@ -2923,6 +3140,9 @@ section.content.no-pad {
   bottom: 0;
   width: 100%;
   height: 100%;
+}
+.iso-wrap .item .content:hover {
+  background-size: 110% 110%;
 }
 .iso-wrap .item .content > img {
   display: none;
@@ -3352,15 +3572,39 @@ section.content.no-pad {
     filter: alpha(opacity=100);
     opacity: 1;
   }
-  #people .owl-carousel .item .holder .info {
+  #people .info {
     left: 140px;
   }
-  #people .owl-carousel .item .holder .info .bg-black,
-  #people .owl-carousel .item .holder .info .inner {
+  #people .info .bg-black,
+  #people .info .inner {
     left: 0;
+  }
+  #people .item.last .info {
+    left: -240px;
   }
   #us-logo {
     padding-top: 98px;
+  }
+  #us-logo2 .title-blurb {
+    position: absolute;
+    padding: 0;
+    display: block;
+    width: 286px;
+    top: 50%;
+    left: 50%;
+  }
+  #us-logo2 .title-blurb .inner {
+    left: 43px;
+    margin-top: -210px;
+  }
+  #us-logo2 .bgstretcher {
+    display: block;
+  }
+  #us-logo2 .table-display {
+    height: 100%;
+  }
+  #us-logo2 .big-holder {
+    display: none;
   }
   #us-logo .title-blurb {
     position: absolute;
@@ -3368,6 +3612,7 @@ section.content.no-pad {
     display: block;
     left: 50px;
     top: 30px;
+    width: 286px;
   }
   #us-logo .item {
     left: 430px;
@@ -3544,7 +3789,7 @@ section.content.no-pad {
     width: 461px;
     left: -232px;
   }
-  #people .owl-carousel .item .holder .info {
+  #people .info {
     left: 170px;
   }
   #us-logo .title-blurb {

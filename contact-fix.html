@@ -31,207 +31,222 @@
         data-bottom-top="transform: translate3d(0px, -80%, 0px);"
         data-top-bottom="transform: translate3d(0px, 80%, 0px);"
     >
-  	<div id="map2" class="h100"></div>
+      <div id="map2" class="h100"></div>
     </div>
     <!--the +/-80% translation can be adjusted to control the speed difference of the image--> 
   </div>
   <div id="skrollr-body">
-  <header>
-    <div class="div-bg black"></div>
-    <!-- div-bg -->
-    <div class="holder">
-      <div class="logo"> <a href="index.html"><img src="img/logo-grn.svg" alt="Idea Works"></a> </div>
-      <!-- logo -->
-      <nav class="main-nav">
-        <button class="btn-menu mobile show"><span class="fa fa-bars"></span></button>
-        <ul>
-          <li><a href="work.html">Work</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a class="active" href="contact.html">Contact</a>
-            <ul>
-              <li><a id="sec-location" class="scr-link" href="#location">Location</a></li>
-              <li><a id="sec-careers" class="scr-link" href="#careers">Careers</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <!-- main-nav -->
-      <nav class="mob-nav">
-        <button class="btn-menu"><span class="fa fa-bars"></span></button>
-        <div class="nav-items">
-          <div class="site-links">
-            <ul>
-              <li><a href="work.html">Work</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a class="active" href="contact.html">Contact</a></li>
-            </ul>
+    <header>
+      <div class="div-bg black"></div>
+      <!-- div-bg -->
+      <div class="holder">
+        <div class="logo"> <a href="index.html"><img src="img/logo-grn.svg" alt="Idea Works"></a> </div>
+        <!-- logo -->
+        <nav class="main-nav">
+          <button class="btn-menu mobile show"><span class="fa fa-bars"></span></button>
+          <ul>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a class="active" href="contact.html">Contact</a>
+              <ul>
+                <li><a id="sec-location" class="scr-link" href="#location">Location</a></li>
+                <li><a id="sec-careers" class="scr-link" href="#careers">Careers</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- main-nav -->
+        <nav class="mob-nav">
+          <button class="btn-menu"><span class="fa fa-bars"></span></button>
+          <div class="nav-items">
+            <div class="site-links">
+              <ul>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="scl-links">
+              <ul>
+                <li><a href="#" target="_blank"><img src="img/icon-mail.svg" alt="Mail"></a></li>
+                <li><a href="#" target="_blank"><img src="img/icon-vimeo.svg" alt="Vimeo"></a></li>
+                <li><a href="#" target="_blank"><img src="img/icon-linkedin.svg" alt="LinkedIn"></a></li>
+              </ul>
+            </div>
           </div>
-          <div class="scl-links">
-            <ul>
-              <li><a href="#" target="_blank"><img src="img/icon-mail.svg" alt="Mail"></a></li>
-              <li><a href="#" target="_blank"><img src="img/icon-vimeo.svg" alt="Vimeo"></a></li>
-              <li><a href="#" target="_blank"><img src="img/icon-linkedin.svg" alt="LinkedIn"></a></li>
-            </ul>
+          <!-- nav-items --> 
+        </nav>
+        <!-- mob-nav --> 
+      </div>
+      <!-- holder --> 
+    </header>
+    <section id="bg1" class="h100">
+      <div id="map1" class="h100"></div>
+      <div class="grn-bar abs-btm"></div>
+    </section>
+    <!-- #proj-head -->
+    <section id="location" class="content scr-sec">
+      <div class="container clearfix">
+        <div class="grid_full">
+          <div class="grid_half alpha">
+            <h2>Find Us</h2>
+            <div class="add-blocks">
+              <div class="item">
+                <h3>Brisbane</h3>
+                <p>L 1, 108 Wickham St.<br>
+                  Fortitude Valley,<br>
+                  Qld. 4006<br>
+                  +61 7 3309 4777</p>
+              </div>
+              <!-- item -->
+              <div class="item">
+                <h3>Sydney</h3>
+                <p>L 14, 35 Clarence St.<br>
+                  Sydney, NSW, 2000<br>
+                  +61 2 9909 4646</p>
+              </div>
+              <!-- item -->
+              <div class="item">
+                <h3>Melbourne</h3>
+                <p>L 3, 162 Collins St.<br>
+                  Melbourne, Vic. 3000<br>
+                  +61 3 9287 1200</p>
+              </div>
+              <!-- item -->
+              <div class="item">
+                <h3>Auckland</h3>
+                <p>Shed 5A, City Works<br>
+                  Depot, 90 Wellesley St.<br>
+                  W. Auckland, NZ, 1010<br>
+                  +64 9 308 5444</p>
+              </div>
+              <!-- item --> 
+            </div>
+            <!-- add-block --> 
           </div>
+          <!-- grid_half -->
+          <div class="grid_half omega">
+            <h2>Write Us</h2>
+            <h3>Send us a message</h3>
+            <form id="rform" name="rform">
+              <div class="form-item">
+                <input id="name" name="name" type="text" placeholder="Name" required>
+              </div>
+              <div class="form-item">
+                <input id="email" name="email" type="text" placeholder="Email" required>
+              </div>
+              <div class="form-item form-item webform-component webform-component-select webform-component--location">
+                <label for="edit-submitted-location">Location <span title="This field is required." class="form-required">*</span></label>
+                <select class="form-select required" name="submitted[location]" id="edit-submitted-location">
+                  <option selected="selected" value="">- Select -</option>
+                  <option value="brisbane">Brisbane</option>
+                  <option value="sydney">Sydney</option>
+                  <option value="auckland">Auckland</option>
+                  <option value="melbourne">Melbourne</option>
+                </select>
+              </div>
+              <div class="form-item">
+                <textarea id="message" name="message" placeholder="Message"></textarea>
+              </div>
+              <div class="form-item">
+                <input type="submit" value="Submit">
+              </div>
+            </form>
+          </div>
+          <!-- grid_half --> 
         </div>
-        <!-- nav-items --> 
-      </nav>
-      <!-- mob-nav --> 
-    </div>
-    <!-- holder --> 
-  </header>
-  <section id="bg1" class="h100">
-  	<div id="map1" class="h100"></div>
-    <div class="grn-bar abs-btm"></div>
-  </section>
-  <!-- #proj-head -->
-  <section id="location" class="content scr-sec">
-    <div class="container clearfix">
-      <div class="grid_full">
-        <div class="grid_half alpha">
-          <h2>Find Us</h2>
-          <div class="add-blocks">
+        <!-- grid_full --> 
+      </div>
+      <!-- container --> 
+    </section>
+    <!-- content -->
+    <section id="bg2" class="h35"> </section>
+    <!-- #proj-head -->
+    <section id="careers" class="content scr-sec">
+      <div class="container clearfix">
+        <div class="grid_full">
+          <h2>Work with us</h2>
+          <div class="pillar-grid clearfix">
             <div class="item">
-              <h3>Brisbane</h3>
-              <p>L 1, 108 Wickham St.<br>
-                Fortitude Valley,<br>
-                Qld. 4006<br>
-                +61 7 3309 4777</p>
+              <div class="holder">
+                <div class="bg-static"></div>
+                <div class="info">
+                  <h3 class="title">General Enquiries</h3>
+                  <div class="icon-set">
+                    <div class="flip-container">
+                      <div class="flipper">
+                        <div class="front">
+                          <div class="token enquires"></div>
+                          <!-- front content --> 
+                        </div>
+                        <div class="back">
+                          <div class="token enquires-grn"></div>
+                          <!-- back content --> 
+                        </div>
+                      </div>
+                      <!-- flipper --> 
+                    </div>
+                    <!-- flip-container --> 
+                  </div>
+                  <!-- icon --> 
+                </div>
+                <!-- info --> 
+                <a href="#"><span>Read more</span></a> </div>
+              <!-- holder --> 
             </div>
             <!-- item -->
-            <div class="item">
-              <h3>Sydney</h3>
-              <p>L 14, 35 Clarence St.<br>
-                Sydney, NSW, 2000<br>
-                +61 2 9909 4646</p>
-            </div>
-            <!-- item -->
-            <div class="item">
-              <h3>Melbourne</h3>
-              <p>L 3, 162 Collins St.<br>
-                Melbourne, Vic. 3000<br>
-                +61 3 9287 1200</p>
-            </div>
-            <!-- item -->
-            <div class="item">
-              <h3>Auckland</h3>
-              <p>Shed 5A, City Works<br>
-                Depot, 90 Wellesley St.<br>
-                W. Auckland, NZ, 1010<br>
-                +64 9 308 5444</p>
+            <div class="item b2w">
+              <div class="holder">
+                <div class="bg-hover">
+                  <div class="info-hover">
+                    <p>IdeaWorks runs a Graduate Recruitment Program through the Y&amp;R Talent Team, with intakes in April and August each year. We are always on the lookout for talented people to join our team. So if you’re a graduate in marketing, communications, advertising, interiors or architecture, please register your interest and <strong>EMAIL US</strong> with your CV and a covering letter. We look forward to hearing from you.</p>
+                  </div>
+                </div>
+                <div class="info">
+                  <h3 class="title">Graduate Program</h3>
+                  <div class="icon-set">
+                    <div class="flip-container">
+                      <div class="flipper">
+                        <div class="front">
+                          <div class="token grad"></div>
+                          <!-- front content --> 
+                        </div>
+                        <div class="back">
+                          <div class="token grad-grn"></div>
+                          <!-- back content --> 
+                        </div>
+                      </div>
+                      <!-- flipper --> 
+                    </div>
+                    <!-- flip-container --> 
+                  </div>
+                  <!-- icon --> 
+                </div>
+                <!-- info --> 
+              </div>
+              <!-- holder --> 
             </div>
             <!-- item --> 
           </div>
-          <!-- add-block --> 
+          <!-- pillar-grid --> 
         </div>
-        <!-- grid_half -->
-        <div class="grid_half omega">
-          <h2>Write Us</h2>
-          <h3>Send us a message</h3>
-          <form id="rform" name="rform">
-          	<div class="form-item"><input id="name" name="name" type="text" placeholder="Name" required></div>
-            <div class="form-item"><input id="email" name="email" type="text" placeholder="Email" required></div>
-            <div class="form-item"><textarea id="message" name="message" placeholder="Message"></textarea></div>
-            <div class="form-item"><input type="submit" value="Submit"></div>
-            
-          </form>
-        </div>
-        <!-- grid_half --> 
+        <!-- grid_full --> 
       </div>
-      <!-- grid_full --> 
-    </div>
-    <!-- container --> 
-  </section>
-  <!-- content -->
-  <section id="bg2" class="h35">
-  </section>
-  <!-- #proj-head -->
-  <section id="careers" class="content scr-sec">
-    <div class="container clearfix">
-      <div class="grid_full">
-        <h2>Work with us</h2>
-        <div class="pillar-grid clearfix">
-          <div class="item">
-            <div class="holder">
-          	<div class="bg-static"></div>
-              <div class="info">
-                <h3 class="title">General Enquiries</h3>
-                <div class="icon-set">
-                  <div class="flip-container">
-                    <div class="flipper">
-                      <div class="front">
-                        <div class="token enquires"></div>
-                        <!-- front content --> 
-                      </div>
-                      <div class="back">
-                        <div class="token enquires-grn"></div>
-                        <!-- back content --> 
-                      </div>
-                    </div>
-                    <!-- flipper --> 
-                  </div>
-                  <!-- flip-container --> 
-                </div>
-                <!-- icon --> 
-              </div>
-              <!-- info --> 
-              <a href="#"><span>Read more</span></a>
-            </div>
-            <!-- holder --> 
-          </div>
-          <!-- item -->
-          <div class="item b2w">
-            <div class="holder">
-            	<div class="bg-hover">
-                	<div class="info-hover">
-                	<p>IdeaWorks runs a Graduate Recruitment Program through the Y&amp;R Talent Team, with intakes in April and August each year. We are always on the lookout for talented people to join our team. So if you’re a graduate in marketing, communications, advertising, interiors or architecture, please register your interest and <strong>EMAIL US</strong> with your CV and a covering letter. We look forward to hearing from you.</p>
-                </div>
-                </div>
-              <div class="info">
-                <h3 class="title">Graduate Program</h3>
-                <div class="icon-set">
-                  <div class="flip-container">
-                    <div class="flipper">
-                      <div class="front">
-                        <div class="token grad"></div>
-                        <!-- front content --> 
-                      </div>
-                      <div class="back">
-                        <div class="token grad-grn"></div>
-                        <!-- back content --> 
-                      </div>
-                    </div>
-                    <!-- flipper --> 
-                  </div>
-                  <!-- flip-container --> 
-                </div>
-                <!-- icon --> 
-              </div>
-              <!-- info --> 
-            </div>
-            <!-- holder --> 
-          </div>
-          <!-- item -->
-        </div>
-        <!-- pillar-grid --> 
+      <!-- container --> 
+    </section>
+    <!-- content -->
+    <footer>
+      <div class="cr-txt"> Ideaworks 2015 </div>
+      <!-- cr-txt -->
+      <div class="scl-links">
+        <ul>
+          <li><a class="scl-mail" href="#" target="_blank"><span>Mail</span></a></li>
+          <li><a class="scl-vimeo" href="#" target="_blank"><span>Vimeo</span></a></li>
+          <li><a class="scl-linkedin" href="#" target="_blank"><span>LinkedIn</span></a></li>
+        </ul>
       </div>
-      <!-- grid_full --> 
-    </div>
-    <!-- container --> 
-  </section>
-  <!-- content -->
-  <footer>
-    <div class="cr-txt"> Ideaworks 2015 </div>
-    <!-- cr-txt -->
-    <div class="scl-links">
-      <ul>
-        <li><a class="scl-mail" href="#" target="_blank"><span>Mail</span></a></li>
-        <li><a class="scl-vimeo" href="#" target="_blank"><span>Vimeo</span></a></li>
-        <li><a class="scl-linkedin" href="#" target="_blank"><span>LinkedIn</span></a></li>
-      </ul>
-    </div>
-  </footer>
-  <!-- footer --> 
+    </footer>
+    <!-- footer --> 
   </div>
   <!-- skrollr-body --> 
 </div>
@@ -239,19 +254,19 @@
 <script>
 	var themePath = "",
 		curLoc;
-</script>
+</script> 
 <script src="js/vendor/jquery-1.11.1.min.js"></script> 
 <script src="js/greensock/TweenLite.min.js"></script> 
 <script src="js/greensock/easing/EasePack.min.js"></script> 
 <script src="js/greensock/plugins/CSSPlugin.min.js"></script> 
 <script src="js/greensock/plugins/ScrollToPlugin.min.js"></script> 
 <script src="js/vendor/jquery.imgpreload.min.js"></script> 
-<script src="js/vendor/skrollr.min.js"></script> 
-<script src="js/vendor/jquery.address-1.6.min.js"></script> 
+<script src="js/vendor/skrollr.min.js"></script>
+<script src="js/vendor/jquery.customSelect.min.js"></script>
 <script src="js/plugins.js"></script> 
-<script src="js/main.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-<script src="js/contact.js"></script>
+<script src="js/main.js"></script> 
+<script src="https://maps.googleapis.com/maps/api/js"></script> 
+<script src="js/contact.js"></script> 
 <!--<script src="js/location.js"></script>-->
 </body>
 </html>

@@ -156,7 +156,8 @@
 /* about */
 .pillar-grid {
 	.item {
-		
+		@hvr-grn: lighten(@col-grn, 20%);
+		.linkSet(@col-grn, @hvr-grn, inherit, none, none);
 		padding: 0 0 20px 0;
 		overflow: visible;
 		.box-sizing();
@@ -268,6 +269,10 @@
 			width: 100%;
 			height: 100%;
 		}
+		.content {
+			.transitions(all);
+			background-size: 100% 100%;	
+		}
 		.cbox {
 			position: relative;
 			.bg-black {
@@ -294,8 +299,13 @@
 				}
 			}
 		}
-		:hover .bg-black {
-			.setOpacity(0);
+		&:hover {
+			.content {
+				background-size: 110% 110%;	
+			}
+			.bg-black {
+				.setOpacity(0);
+			}
 		}
 	}
 }

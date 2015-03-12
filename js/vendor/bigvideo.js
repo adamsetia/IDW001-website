@@ -70,14 +70,19 @@
 					player
 						.width(containerH*mediaAspect)
 						.height(containerH);
+					var cH = containerH;
+					if(vidEl == '#big-video-vid-0') cH = (containerH<700) ? 700 : containerH;
+					
+					
 					if (!settings.shrinkable) {
+						console.log(cH);
 						$(vidEl)
 							.css('top',0)
 							.css('left',-(containerH*mediaAspect-containerW)/2)
 							.css('height',containerH);
 					} else {
 						$(vidEl)
-							.css('top',-(containerW/mediaAspect-containerH)/2)
+							.css('top',-(containerW/mediaAspect-cH)/2)
 							.css('left',0)
 							.css('height',containerW/mediaAspect);
 					}
@@ -103,8 +108,10 @@
 					player
 						.width(containerW)
 						.height(containerW/mediaAspect);
+					var cH = containerH;
+					if(vidEl == '#big-video-vid-0') cH = (containerH<700) ? 700 : containerH;
 					$(vidEl)
-						.css('top',-(containerW/mediaAspect-containerH)/2)
+						.css('top',-(containerW/mediaAspect-cH)/2)
 						.css('left',0)
 						.css('height',containerW/mediaAspect);
 					$(vidEl+'_html5_api')

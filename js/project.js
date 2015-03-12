@@ -12,8 +12,9 @@
 		items = bgWrap.find('.item');
 		
 		skrollr.init({
-			smoothScrolling: false,
-			mobileDeceleration: 0.004
+			smoothScrolling: true,
+			mobileDeceleration: 0.004,
+			forceHeight: false
 		});
 		
 		$( win ).resize(function() {

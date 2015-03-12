@@ -21,6 +21,7 @@
 		}
 		initMobileMenu();
 		// check scroll top
+		/*
 		$( doc ).scroll(function() {
 			if(!header.hasClass('fixed')) {
 				//console.log($(doc).scrollTop());
@@ -32,7 +33,11 @@
 					header.removeClass('fixed');
 				}
 			}
-		});
+		});*/
+		if(wrap.find('form select')[0]) {
+			wrap.find('form select').customSelect();
+			wrap.find('form select').trigger('render');
+		}
 		
 		if (!Modernizr.svg) {
 			var imgs = document.getElementsByTagName('img');

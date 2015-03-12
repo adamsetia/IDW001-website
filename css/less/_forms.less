@@ -12,7 +12,8 @@
 		display: none;	
 	}
 }
-input[type="text"], input[type="email"], input[type="password"], textarea {
+input[type="text"], input[type="email"], input[type="password"], textarea, select {
+	.avenirMed();
 	height: 35px;
 	.box-sizing();
 	width: 100%;
@@ -38,6 +39,39 @@ input[type="submit"] {
 		color: @col-grn;	
 	}
 }
+::-webkit-input-placeholder { color:@bg-owhite; }
+::-moz-placeholder { color:@bg-owhite; } /* firefox 19+ */
+:-ms-input-placeholder { color:@bg-owhite; } /* ie */
+input:-moz-placeholder { color:@bg-owhite; }
+
+.customSelect {
+	/* Styles For Your Select Box */
+    .avenirMed();
+	height: 35px;
+	line-height: 35px;
+	.box-sizing();
+	width: 100%;
+	border: none;
+	background: @col-grey url(images/listArrow.png) right center no-repeat;
+	padding: 0 8px;
+	color: @bg-owhite;
+	&.changed {
+		/* You can use this if you want a different style after user has made a selection */
+		color: #fff;
+	}
+	.customSelectFocus {
+	/* You can use this if you want a different style after user has made a selection */
+	}
+	
+	.customSelectOpen {
+		/* You can use this if you want a different style after user has made a selection */
+	}
+}
+/* We can style the inner box, too */
+.customSelectInner {
+	
+}
+
 .setForms(@w) when (@w = @breakpoint1) {
 	.form-item {
 		max-width: 305px;
