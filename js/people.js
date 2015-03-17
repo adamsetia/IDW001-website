@@ -37,7 +37,22 @@
 		});
 		// store image width of all items
 		itms.each(function(index, element) {
-            var imgW = $(this).find('img').width();
+            var img = $(this).find('img'),
+				imgW;
+			
+			if(img.attr('data-width')) {
+				img.css('width', img.data('width'));
+				imgW = img.width();
+			} else {
+				imgW = Math.round(img.width()*.6157);
+				img.css({
+					'width': imgW,
+					'height': 'auto'
+				});
+			}
+			
+			
+			console.log(imgW);
 			pplW.push(imgW);
         });
 		// set last class to the 2 last items
@@ -47,7 +62,7 @@
 		
 		// event listeners
 		owlElem.on('initialized.owl.carousel resized.owl.carousel ', function(e) {
-			console.log(e);
+			//console.log(e);
 		  	curSize = e.page.size;
 			curInd = e.item.index;
 			// close any viewed person on resize
@@ -116,7 +131,7 @@
 				  noMove = false;
 			  }
 		  }
-		  console.log(noMove);
+		  //console.log(noMove);
 		  if(noMove) {
 			  pplActive2(uind, false);
 		  }

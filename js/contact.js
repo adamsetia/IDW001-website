@@ -6,7 +6,8 @@
 		map2,
 		custom_styles,
 		locations,
-		curLoc;
+		curLoc,
+		hasLoc = false;
 	var geocoder;
 		
 	$(function() {
@@ -101,6 +102,7 @@
 		var mapAll = true;
 		if(curLoc == "NSW" || curLoc == "QLD" || curLoc == "VIC" || curLoc == "Auckland" ) {
 			mapAll = false;
+			hasLoc = true;
 		}
 		
 		// build map options
@@ -212,7 +214,7 @@
 		
 		//Re-center the map when the browser is resized
 		google.maps.event.addDomListener(window, "resize", function() {
-			if(!mapAll) {
+			if(hasLoc) {
 				var center1 = map1.getCenter();
 				google.maps.event.trigger(map1, "resize");
 				map1.setCenter(center1); 

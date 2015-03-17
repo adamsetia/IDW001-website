@@ -27,6 +27,7 @@
 		var sliding = bgImgs.length > 1 ? true : false,
 			loaded = 0,
 			intTime = 5000,
+			firstInt = 9000,
 			transSpeed = 600,
 			timer;
 		// adjust nav
@@ -72,7 +73,7 @@
 				if(sliding) {
 					timer = setTimeout(function(){
 						$('.home-banners').bgStretcher.play();
-					},intTime);
+					},firstInt);
 				}
 			}});
 		}

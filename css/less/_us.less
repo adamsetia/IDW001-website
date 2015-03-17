@@ -1,26 +1,29 @@
 /*sections*/
-.min-650 {
-	min-height: 700px;
+.min-700 {
+	min-height: 780px;
 }
 #us {
-	min-height: 700px;	
+	min-height: 780px;	
 	.grn-bar {
 		z-index: 70;	
 	}
 }
 #vid1 {
-	min-height: 700px;	
+	min-height: 780px;	
 	position: absolute;
 	width: 100%;
 	top: 0;
 	left: 0;	
 }
+.video-holder, .video-holderL {
+	display: none;
+}
 #us-logo2 {
-	visibility: hidden;
+	display: none;
 	overflow: hidden;
 	width: 100%;
 	position: relative;
-	z-index:20;
+	z-index:35;
 	color: #939598;
 	.title-blurb {
 		visibility: hidden;
@@ -58,7 +61,7 @@
 	}
 	.bgstretcher-area, .bgstretcher-page {
 		height: 100%;
-		min-height: 700px;	
+		min-height: 780px;	
 	}
 	.bgstretcher {
 		display: none;	
@@ -117,6 +120,7 @@
 			top: 0;
 		}
 		.inner {
+			
 			position: relative;
 		}
 	}
@@ -161,6 +165,9 @@
 	}
 }
 .setUs(@w) when (@w = @breakpoint1) {
+	.video-holder, .video-holderL {
+		display: block;
+	}
 	#us-logo {
 		padding-top: 98px;
 	}
@@ -169,12 +176,12 @@
 			position: absolute;
 			padding: 0;
 			display: block;
-			width: 286px;
+			width: 326px;
 			top: 50%;
 			left: 50%;
 			.inner {
 				left: 43px;
-    			margin-top: -210px;	
+    			margin-top: -260px;	
 			}
 		}
 		.bgstretcher {
@@ -235,6 +242,11 @@
 .setUs(@w) when (@w = @breakpoint2) {
 	#us-logo2 {
 		.title-blurb {
+			width: 376px;
+			.inner {
+				left: 43px;
+    			margin-top: -260px;	
+			}
 		}
 	}
 	#us-logo {

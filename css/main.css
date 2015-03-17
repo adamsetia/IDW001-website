@@ -1969,7 +1969,7 @@ header.show-menu {
   filter: alpha(opacity=100);
   opacity: 1;
 }
-.home-banners.project .bg-nav ul {
+.home-banners.hastitle .bg-nav ul {
   bottom: 70px;
 }
 /*footer*/
@@ -2670,6 +2670,9 @@ section.content.no-pad {
   font-size: 15px;
   line-height: 1.133em;
 }
+#map1 {
+  height: 105%;
+}
 /*sections*/
 #people {
   height: 715px;
@@ -2849,6 +2852,9 @@ section.content.no-pad {
   line-height: 1.2em;
   padding-bottom: 10px;
 }
+#people .info h5 span {
+  text-transform: uppercase;
+}
 #people .info .scl-links ul {
   padding-bottom: 0;
 }
@@ -2890,28 +2896,32 @@ section.content.no-pad {
   width: 130px;
 }
 /*sections*/
-.min-650 {
-  min-height: 700px;
+.min-700 {
+  min-height: 780px;
 }
 #us {
-  min-height: 700px;
+  min-height: 780px;
 }
 #us .grn-bar {
   z-index: 70;
 }
 #vid1 {
-  min-height: 700px;
+  min-height: 780px;
   position: absolute;
   width: 100%;
   top: 0;
   left: 0;
 }
+.video-holder,
+.video-holderL {
+  display: none;
+}
 #us-logo2 {
-  visibility: hidden;
+  display: none;
   overflow: hidden;
   width: 100%;
   position: relative;
-  z-index: 20;
+  z-index: 35;
   color: #939598;
 }
 #us-logo2 .title-blurb {
@@ -2961,7 +2971,7 @@ section.content.no-pad {
 #us-logo2 .bgstretcher-area,
 #us-logo2 .bgstretcher-page {
   height: 100%;
-  min-height: 700px;
+  min-height: 780px;
 }
 #us-logo2 .bgstretcher {
   display: none;
@@ -3526,7 +3536,7 @@ section.content.no-pad {
   }
   .pillar-grid .item .holder {
     width: 181px;
-    height: 355px;
+    height: 380px;
   }
   .pillar-grid .item .holder .info {
     padding: 40px 20px;
@@ -3582,6 +3592,10 @@ section.content.no-pad {
   #people .item.last .info {
     left: -240px;
   }
+  .video-holder,
+  .video-holderL {
+    display: block;
+  }
   #us-logo {
     padding-top: 98px;
   }
@@ -3589,13 +3603,13 @@ section.content.no-pad {
     position: absolute;
     padding: 0;
     display: block;
-    width: 286px;
+    width: 326px;
     top: 50%;
     left: 50%;
   }
   #us-logo2 .title-blurb .inner {
     left: 43px;
-    margin-top: -210px;
+    margin-top: -260px;
   }
   #us-logo2 .bgstretcher {
     display: block;
@@ -3791,6 +3805,13 @@ section.content.no-pad {
   }
   #people .info {
     left: 170px;
+  }
+  #us-logo2 .title-blurb {
+    width: 376px;
+  }
+  #us-logo2 .title-blurb .inner {
+    left: 43px;
+    margin-top: -260px;
   }
   #us-logo .title-blurb {
     left: 90px;

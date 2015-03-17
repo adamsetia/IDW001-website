@@ -71,7 +71,7 @@
 						.width(containerH*mediaAspect)
 						.height(containerH);
 					var cH = containerH;
-					if(vidEl == '#big-video-vid-0') cH = (containerH<700) ? 700 : containerH;
+					if(vidEl == '#big-video-vid-0') cH = (containerH<780) ? 780 : containerH;
 					
 					
 					if (!settings.shrinkable) {
@@ -109,7 +109,7 @@
 						.width(containerW)
 						.height(containerW/mediaAspect);
 					var cH = containerH;
-					if(vidEl == '#big-video-vid-0') cH = (containerH<700) ? 700 : containerH;
+					if(vidEl == '#big-video-vid-0') cH = (containerH<780) ? 780 : containerH;
 					$(vidEl)
 						.css('top',-(containerW/mediaAspect-cH)/2)
 						.css('left',0)
