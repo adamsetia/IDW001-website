@@ -1566,14 +1566,7 @@ header .logo {
   bottom: 14px;
   z-index: 300;
   padding-left: 15px;
-  -webkit-transition: top 0.2s ease-out 0s;
-  -moz-transition: top 0.2s ease-out 0s;
-  -ms-transition: top 0.2s ease-out 0s;
-  -o-transition: top 0.2s ease-out 0s;
-  transition: top 0.2s ease-out 0s;
-}
-header .logo img {
-  width: 80%;
+  width: 66px;
   -webkit-transition: all 0.2s ease-out 0s;
   -moz-transition: all 0.2s ease-out 0s;
   -ms-transition: all 0.2s ease-out 0s;
@@ -2029,6 +2022,13 @@ footer .scl-links ul li:first-child {
   height: 100%;
   overflow: visible;
   position: relative;
+}
+.skrollable-before,
+.skrollable-after {
+  visibility: hidden !important;
+}
+.skrollable-between {
+  visibility: visible !important;
 }
 .skrollr-desktop body {
   height: 100% !important;
@@ -2905,7 +2905,7 @@ section.content.no-pad {
 #us .grn-bar {
   z-index: 70;
 }
-#vid1 {
+#us #vid0 {
   min-height: 780px;
   position: absolute;
   width: 100%;
@@ -3176,6 +3176,7 @@ section.content.no-pad {
   height: 100%;
 }
 .iso-wrap .item .content .info {
+  z-index: 50;
   -webkit-opacity: 0;
   -moz-opacity: 0;
   filter: alpha(opacity=0);
@@ -3401,12 +3402,10 @@ section.content.no-pad {
     height: 98px;
   }
   header .logo {
+    width: 82px;
     padding-left: 34px;
     top: 26px;
     bottom: auto;
-  }
-  header .logo img {
-    width: 100%;
   }
   header .main-nav {
     display: block;

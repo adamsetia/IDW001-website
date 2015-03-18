@@ -51,7 +51,7 @@
 			imageHeight: 1050,
 			nextSlideDelay: intTime,
 			slideShowSpeed: transSpeed,
-			anchoringImg: "center top",
+			anchoringImg: "center center",
 			slideShow: false,
 			buttonNext: bgWrap.find('.next'),
             buttonPrev: bgWrap.find('.prev'),

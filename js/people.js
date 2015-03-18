@@ -51,8 +51,6 @@
 				});
 			}
 			
-			
-			console.log(imgW);
 			pplW.push(imgW);
         });
 		// set last class to the 2 last items
